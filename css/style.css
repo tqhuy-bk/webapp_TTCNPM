@@ -43,19 +43,23 @@ body{
 }
 /**** Header Top Right ****/
 .header_top_right{
-	float:left;
+	float: left;
 	width:67%;
 	margin-top:35px;
 }
 .search_box{
+	margin-right: 20px;
+	margin-left: 10px;
 	float:left;
 	border: 1px solid #DBDBDB;
 	position:relative;
-	width:47%;
+	width:100%;
 }
 .search_box input[type="text"]{
 	width:74%;
 	padding:9px 8px;
+	margin-right: 20px;
+	margin-left: 10px;
 	outline:none;
 	border:none;
 	background:none;
@@ -71,16 +75,10 @@ body{
 	color:#FFF;
 	font-size:12px;
 	padding:10px 15px;
+	margin-right: 20px;
+	margin-left: 10px;
 	height: 36px;
 	margin:0;
-	background: -webkit-gradient(linear,left top,left bottom,from(#70389C),to(#602D8D));
-	background: -moz-linear-gradient(top,#70389C,#602D8D);
-	background: -o-linear-gradient(top,#70389C,#602D8D);
-	background: -ms-linear-gradient(top,#70389C,#602D8D);
-	-webkit-transition: all .9s;
-	-moz-transition: all .9s;
-	-o-transition: all .9s;
-	-ms-transition: all .9s;
 	transition: all .9s;
 	position:absolute;
 	right:0;
@@ -90,15 +88,14 @@ body{
 	background:#444;
 }
 .shopping_cart{
-	float:left;
+	float:right;
 	width: 202px;
 	position:relative;
 	margin-left:15px;
+	margin-right:20px;
 	padding: 0 0 0 46px;
 	background: url(../images/header_cart.png) 0 0 no-repeat;
 	z-index: 99;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	cursor:pointer;
 }
@@ -109,10 +106,7 @@ body{
 	border: 1px solid #CECECE;
 	border-left: none;
 	line-height: 36px;
-	-webkit-border-radius: 0 2px 2px 0;
 	border-radius: 0 2px 2px 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 .shopping_cart .cart .opencart {
@@ -159,15 +153,15 @@ input[type="number"] {
 	background: #70389C;
 }
 .login {
-  background: rgba(0, 0, 0, 0) url("../images/gradient_light-1.png") repeat-x scroll 0 0;
+  
   border: 1px solid #cecece;
   box-sizing: border-box;
   color: #444;
   display: block;
-  float: left;
+  float: right;
   font-size: 27px;
   height: 38px;
-  margin-left: 10px;
+
   text-align: center;
   width: 144px;
 }
@@ -414,26 +408,14 @@ p.note{
 .art_slide{ 
 max-height:500px;
  }
-.header_bottom{margin-bottom:10px;}
+
 /**** Header Botttom Left ****/
-.header_bottom_img{
-	float:left;
-	width: 46.2%;
-}
+
 .pic{
 	float:left;
 	width: 46.2%;
 }
-.header_bottom_img2{
-	float:left;
-	width: 46.2%;
-	margin-left:1.6%;
-}
-.header_bottom_left_images{
-	position:relative;
-	margin-top:10px;
-	box-shadow: 0px 0px 3px rgb(150, 150, 150);
-}
+
 .section {
 	clear: both;
 	padding: 0px;
@@ -515,12 +497,7 @@ max-height:500px;
         background:#70389C;
         text-decoration:none; 
 }
-.header_bottom_right_images{
 
-	width:100%;
-	padding-top: 15px;
-
-}
 .content{
 	padding:20px 0;
 	background:#FFF;
@@ -702,13 +679,6 @@ max-height:500px;
 .footer{
 	position:relative;
 	background: #414045; 
-	background: -moz-linear-gradient(top,  #414045 55%, #2f2e33 100%); 
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(55%,#414045), color-stop(100%,#2f2e33));
-	background: -webkit-linear-gradient(top,  #414045 55%,#2f2e33 100%); 
-	background: -o-linear-gradient(top,  #414045 55%,#2f2e33 100%); 
-	background: -ms-linear-gradient(top,  #414045 55%,#2f2e33 100%); 
-	background: linear-gradient(to bottom,  #414045 55%,#2f2e33 100%); 
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414045', endColorstr='#2f2e33',GradientType=0 );
 	box-shadow: inset 0px 1px 8px #222;
 }
 .section {
@@ -1658,13 +1628,6 @@ p.terms {
     .sort, .show {
     	width:24%;
     }
-    .header_bottom_left,.header_bottom_right_images{
-    	
-    	width:100%;
-    }
-    .header_bottom_right_images {
-    	margin-left:0;
-    }
     .listview_1_of_2{
     	margin: 1.4% 0 0% 1.6%;
     }
@@ -1947,13 +1910,6 @@ p.terms {
     .page-no li a {
     	padding:5px 3px;
     }
-    .header_bottom_left,.header_bottom_right_images{
-    	float:inherit;
-    	width:100%;
-    }
-    .header_bottom_right_images {
-    	margin-left:0;
-    }
     .listview_1_of_2{
     	margin: 1.4% 0 0% 1.6%;
     }
@@ -2215,13 +2171,6 @@ p.terms {
     .page-no li a {
     	padding:5px 3px;
     }
-    .header_bottom_left,.header_bottom_right_images{
-    	float:inherit;
-    	width:100%;
-    }
-    .header_bottom_right_images {
-    	margin-left:0;
-    }
     .listview_1_of_2{
     	margin:2% 0 0% 0%;
     }
@@ -2472,4 +2421,13 @@ p.terms {
 		width:92%;
 		padding:4%;
 	}
+}
+
+.error {
+	color:red;
+	font-size:20px;
+}
+.sussec{
+	 color:green;
+	 font-size:20px;
 }
