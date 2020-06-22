@@ -24,7 +24,7 @@
 ?>
 <!DOCTYPE HTML>
 <head>
-<title>Store Website</title>
+<title>Webapp</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -33,6 +33,9 @@
 <script src="js/script.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> 
 <script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script> 
+<script type="text/javascript" src="js/nav-hover.js"></script>
+
 <script type="text/javascript">
   $(document).ready(function($){
     $('#dc_mega-menu-orange').dcMegaMenu({rowItems:'4',speed:'fast',effect:'fade'});
@@ -46,14 +49,35 @@
 				<a href="index.php"><img src="images/logo1.png" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
+
 			    <div class="shopping_cart">
 					<div class="cart">
-						<a href="#" title="View my shopping cart" rel="nofollow">
-								<span class="cart_title">Cart</span>
-								<span class="no_product">(empty)</span>
+						<a href="cart.php" title="View my shopping cart" rel="nofollow">
+								<span class="cart_title">Cart: </span>
+								<span class="no_product">
+									<?php
+									   $check_empty_cart= $cart->empty_cart();
+									   if($check_empty_cart){
+									   	  $check_sum= Session::get('sum');
+                                       	     echo $check_sum;
+									   }
+									   else{
+									   	echo '0';
+									   }
+									   
+									 ?>
+									 VND
+								</span>
 							</a>
 						</div>
 			      </div>
+			      <?php 
+		   	           $check_login = Session::get('customer_login');
+		   	           if($check_login){
+		   	 	         echo '<a href="profile.php" class="login" style="margin-left:10px;background:#6492d6;width:170px;">Profiles</a>';
+		   	       }
+		   	       ?>
+			      <div><a href="admin/login.php" class="login" style="margin-left:10px;background:#6492d6;width:170px;">Login Admin</a> </div>
 			      <?php 
 			          if(isset($_GET['customerid'])){ 
 			          	Session::destroy(); // nếu tồi tại customerid thì đăng xuất
@@ -66,11 +90,13 @@
 		   	 	echo '<a href="login.php">Login</a>';
 		   	 }
 		   	 else{
-                 echo  	'<a href="?customerid='.Session::get('customer_id').'">Logout</a>';//lấy customer_id gán vào customerid
-                 echo '<a class="login" style="margin-top:20px;margin-left:0px;background:#6492d6;" href="profile.php">Profile</a>';
+                 echo  '<a href="?customerid='.Session::get('customer_id').'">Logout</a>';//lấy customer_id gán vào customerid
 		   	 }
 		   	 ?> 
 		   </div>
+		   <br>
+		   <br>
+		   <br>
 		    <div class="search_box" >
 				    <form>
 				    	<input type="text" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
@@ -81,12 +107,15 @@
 	 <div class="clear"></div>
  </div>
 <div class="menu">
+	
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
 	  <li><a href="index.php">Home</a></li>
 	  <li><a href="foods.php">Foods</a> </li>
 	  <li><a href="drinks.php">Drinks</a></li>
 	  <li><a href="cart.php">Cart</a></li>
 	  <li><a href="contact.php">Contact</a> </li>
+	  
+
 	  <div class="clear"></div>
 	</ul>
 </div>
