@@ -11,7 +11,8 @@
  ?>
  <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
-      $check_add_product_cart= $cart->add_product_cart($_POST,$id);
+        $quantity= $_POST['quantity'];
+        $check_add_product_cart = $cart->add_product_cart($quantity,$id);
       //vi co chen ảnh nên có $_FILES
    } 
  ?>
@@ -38,13 +39,19 @@
 					</div>
 				<div class="add-cart">
 					<form action="" method="post">
-						<input type="number" class="buyfield" name="quantity" value="1"/>
-						<input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
-					</form>				
+						<input type="number" class="buyfield" name="quantity" value="1" min="1" />
+						<input style="background: #0c5a6c;" type="submit" class="buysubmit" name="submit" value="Buy Now"/>
+					</form>
+					<br>
+					<?php 
+					   if(isset($check_add_product_cart)){
+					   	echo $check_add_product_cart;
+					   }
+					 ?>				
 				</div>
 			</div>
 			<div class="product-desc">
-			<h2>Product Details</h2>
+			<h2 style="background: #0c5a6c;">Product Details</h2>
 			<p><?php echo $result['description'] ?></p>
 	        </div>
 				
