@@ -38,10 +38,14 @@
 						<p>Vendor: <span><?php echo $result['catName'] ?> </span> </p>
 					</div>
 				<div class="add-cart">
-					<form action="" method="post">
-						<input type="number" class="buyfield" name="quantity" value="1" min="1" />
-						<input style="background: #0c5a6c;" type="submit" class="buysubmit" name="submit" value="Buy Now"/>
-					</form>
+					<table>
+						<button type="text" onclick="if (count.value != 0) count.value--" id="remove">-</button>
+						<form method="post" action="">
+							<input type="text" id="count" class="buyfield" name="quantity" value="1"/>
+							<td><input type="submit" class="buysubmit" name="submit" value="Add to cart"/></td>
+						</form>
+						<button type="none-submit" onclick="count.value++" id="add">+</button>
+					</table>
 					<br>
 					<?php 
 					   if(isset($check_add_product_cart)){
