@@ -14,7 +14,7 @@
    $customer= new customer();
    $product = new product();
    $category = new category();
-
+   $bankaccount = new bankaccount();
  ?>
 <?php
   header("Cache-Control: no-cache, must-revalidate");
@@ -80,7 +80,7 @@
 			      <div><a href="admin/login.php" class="login" style="margin-left:10px;background:#6492d6;width:170px;">Login Admin</a> </div>
 			      <?php 
 			          if(isset($_GET['customerid'])){ 
-			          	Session::destroy(); // nếu tồi tại customerid thì đăng xuất
+			          	Session::destroy(); // nếu tồi tại customerid thì đăng xuất hủy phiên làm việc (khi đăng nhập) quay về lại ban đầu login.php
 			          }
 			       ?>
 		   <div class="login" style="background:#6492d6;">
