@@ -67,8 +67,7 @@
            $query ="UPDATE tbl_cart SET quantity ='$quantity' WHERE cartID = '$cartID'";
            $result = $this->db->update($query);
                 if($result){
-                    $alert="<span style='color:green;font-size:25px;'> Update quantity completion</span>";
-                    return $alert;
+                   header('Location:cart.php');
                 }
                 else{
                     $alert="<span style='color:red;font-size:25px;'> Update quantity not completion</span>";
@@ -79,8 +78,7 @@
             $query = "DELETE FROM tbl_cart WHERE productID='$productID' ";
             $result = $this->db->delete($query);
             if($result){
-                $alert= "<span style='color:green;font-size:25px;'> Delete completion</span>";
-                return $alert;
+                header('Location:cart.php');
             }
             else{
                 $alert= "<span style='color:red;font-size:25px;'> Dalete not completion</span>";
@@ -93,5 +91,13 @@
             $result = $this->db->select($query);
             return $result;
         }
+
+        public function delete_cart(){
+            $sessionID = session_id();
+            $query ="DELETE FROM tbl_cart WHERE sessionID='$sessionID' ";   
+            $result = $this->db->delete($query);
+            return;
+        }
+
     }
  ?>
