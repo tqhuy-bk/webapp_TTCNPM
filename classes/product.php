@@ -150,5 +150,18 @@
             $result = $this->db->select($query);
             return $result;
         }
+       public function search($search){
+            // Dùng câu lênh like trong sql và sứ dụng toán tử % của php để tìm kiếm dữ liệu chính xác hơn.
+            $query = "SELECT * FROM tbl_product WHERE productName LIKE '%$search%'";
+            // Thực thi câu truy vấn
+            $result = $this->db->select($query);
+            // Nếu có kết quả thì hiển thị, ngược lại thì thông báo không tìm thấy kết quả
+            if ($search != "") {
+                return $result;
+            } 
+            else {
+                echo "Khong tim thay ket qua!";
+            }
+        }
     }
  ?>
