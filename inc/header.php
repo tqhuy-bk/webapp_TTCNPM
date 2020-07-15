@@ -97,11 +97,37 @@
 		   <br>
 		   <br>
 		   <br>
-		    <div class="search_box" >
-				    <form>
-				    	<input type="text" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
-				    </form>
-			    </div>
+		   <div class="search_box" >
+			<form>
+				<input type="text" name="search" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" name="ok" value="search">
+			</form>
+			    <?php
+        			if (isset($_REQUEST['ok'])) {
+            			global $search;
+            			$search = addslashes($_GET['search']);
+            			if (empty($search)) {
+            				echo "Yeu cau nhap du lieu vao o trong";
+            			} 
+            			else {
+            				$check_search = $product->search($search);
+                			// Nếu có kết quả thì hiển thị, ngược lại thì thông báo không tìm thấy kết quả
+                			if ($check_search) {
+                    			// Vòng lặp while & mysql_fetch_assoc dùng để lấy toàn bộ dữ liệu có trong table và trả về dữ liệu ở dạng array.
+                    			echo '<table border="1" cellspacing="0" cellpadding="10">';
+                    			while ($row = $check_search->fetch_assoc()) {
+                        			echo '<tr>';
+                            			echo "<td>{$row['productName']}</td>";
+                        			echo '</tr>';
+                    			}
+                    			echo '</table>';
+                			} 
+                			else {
+                    			echo "Khong tim thay ket qua!";
+                			}           				
+            			}
+            		}
+        		?>
+			</div>
 		 <div class="clear"></div>
 	 </div>
 	 <div class="clear"></div>
