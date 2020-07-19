@@ -1,6 +1,7 @@
 <?php
   include 'inc/header.php';
  ?>
+ 
  <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
         $quantity= $_POST['quantity'];
@@ -82,7 +83,13 @@
 							<a href="index.php"> <img src="images/shop.png" alt="" /></a>
 						</div>
 						<div class="shopright">
-							<a href="login.php"> <img src="images/check.png" alt="" /></a>
+							<a href="<?php 
+                                         $check_login = Session::get('customer_login');
+		                             	 if($check_login==false){
+		   	 	                             echo 'login.php';
+		   	                             }
+		   	                             else echo 'payment.php';
+                                     ?>"> <img src="images/check.png" alt="" /></a>
 						</div>
 					</div>
     	</div>  	
