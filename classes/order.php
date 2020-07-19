@@ -36,10 +36,50 @@
             }
           }   
         }
-        public function show_order(){
+        public function show_order_details($date_order){//dua vao date ngay order 
             $customerID = Session::get('customer_id');
-            $query = "SELECT * FROM tbl_order WHERE customerID = '$customerID' order by orderID desc";
-            //lấy các phần tử trong bảng rồi sắp xếp theo ID
+            $query = "SELECT * FROM tbl_order WHERE customerID = '$customerID' AND date_order= '$date_order' order by orderID desc";
+            $result = $this->db->select($query);
+            return $result;
+        }
+        public function order_list(){//danh sach order
+            $customerID = Session::get('customer_id');
+            $query_del ="DELETE FROM tbl_orderlist  WHERE customerID = '$customerID' ";   
+            $result_del = $this->db->delete($query_del); 
+
+
+           
+            $query_first = "SELECT * FROM tbl_order WHERE customerID = '$customerID' LIMIT 1";
+            $get_first = $this->db->select($query_first);
+            $result_first = $get_first->fetch_assoc(); //lay sp order dau tien 
+            $temp = $result_first['date_order'];
+            $customerID =  $result_first['customerID'];
+            $productName =   $result_first['productName'];
+            $total_price =  $result_first['quantity']* $result_first['price'];
+            $state = 'processing';
+            $qu ="INSERT INTO tbl_orderlist(date_order,customerID,description,price,state) VALUES('$temp','$customerID','$productName','$total_price','$state')"; 
+            $re = $this->db->insert($qu);
+            //lấy các sp trong mỗi lần mua hàng
+            $query_all = "SELECT * FROM tbl_order ";
+            $get_order_all = $this->db->select($query_all);
+            if($get_order_all){
+               while($result_all=$get_order_all->fetch_assoc()){
+                  if($result_all['date_order'] != $temp){
+                    $date = $result_all['date_order'];
+                    $customerID = $result_all['customerID'];
+                    $productName =  $result_all['productName'];
+                    $total_price = $result_all['quantity']*$result_all['price'];
+                    $state = 'processing';
+                    $query ="INSERT INTO tbl_orderlist(date_order,customerID,description,price,state) VALUES('$date','$customerID','$productName','$total_price','$state')"; 
+                    $result = $this->db->insert($query);
+                    $temp = $result_all['date_order'];
+                  }
+               }
+            }
+        }
+        public function show_order_list(){
+            $customerID = Session::get('customer_id');
+            $query = "SELECT * FROM tbl_orderlist WHERE customerID = '$customerID' order by orderlistID desc";
             $result = $this->db->select($query);
             return $result;
         }
