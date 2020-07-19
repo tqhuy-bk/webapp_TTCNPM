@@ -57,6 +57,12 @@
                         <li><a href="vieworder.php"> View Order</a> </li>
                     </ul>
                 </li>
+		    
+                <li><a class="menuitem" style=" background:#ef9478;" href="warelist.php">Nhà kho</a>
+                    <ul class="submenu">
+                        <li><a href="wareordersend.php">Yêu cầu nhập kho</a> </li>
+                    </ul>
+                </li>
                 <br>
                 <br>
                 <br>
