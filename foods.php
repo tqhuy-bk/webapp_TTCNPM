@@ -5,69 +5,29 @@
  <div class="main">
     <div class="content">
     	<div class="content_top">
+    		<div class="heading">
+    		<h3>Foods</h3>
+    		</div>
     		<div class="clear"></div>
     	</div>
 	     <div class="section group">
-				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;">
-					 <a href="details.php"><img src="images/hinh_1.jpg" alt="" /></a>
-					 <h2>Hamburger beef</h2>
-					 <p>1 Miếng Gà Giòn Cay / 1 Miếng Gà Giòn Không Cay / 1 Miếng Gà Truyền</p>
-					 <p><span class="price">60.000VND</span></p>
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
+				 <?php 
+	      	        $get_product_foods= $product->get_foods();
+	      	        if($get_product_foods){
+	      	        	while($result=$get_product_foods->fetch_assoc()){//lay du lieu vao bien result
+	      	     ?>
+				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;margin: 1% 0% 1% 0%;">
+					 <a href="details.php?productid=<?php echo $result['productID'] ?>"><img src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
+					 <h2><?php echo $result['productName'] ?></h2>
+					 <p><?php echo $fm->textShorten($result['description'],30) ?></p>
+					 <p><span class="price"><?php echo $result['price'] ?>VND</span></p>
+				     <div class="button"><span><a href="details.php?productid=<?php echo $result['productID'] ?>" class="details">Details</a></span></div>
 				</div>
-				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;">
-					<a href="details.php"><img src="images/hinh_2.jpg" alt="" /></a>
-					 <h2>Hamburger beef</h2>
-					 <p>1 Miếng Gà Giòn Cay / 1 Miếng Gà Giòn Không Cay / 1 Miếng Gà Truyền</p>
-					 <p><span class="price">70.000VND</span></p>   
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;">
-					<a href="details.php"><img src="images/hinh_3.png" alt="" /></a>
-					 <h2>Hamburger beef</h2>
-					 <p>1 Miếng Gà Giòn Cay / 1 Miếng Gà Giòn Không Cay / 1 Miếng Gà Truyền</p>
-					 <p><span class="price">150.000VND</span></p> 
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;">
-					<img src="images/hinh_4.png" alt="" />
-					 <h2>Hamburger beef</h2>
-					 <p>1 Miếng Gà Giòn Cay / 1 Miếng Gà Giòn Không Cay / 1 Miếng Gà Truyền</p>
-					 <p><span class="price">230.000VND</span></p>  
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
-				</div>
-			</div>
-			
-			 <div class="section group">
-				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;">
-					 <a href="details.php"><img src="images/hinh_1.jpg" alt="" /></a>
-					 <h2>Hamburger beef</h2>
-					 <p>1 Miếng Gà Giòn Cay / 1 Miếng Gà Giòn Không Cay / 1 Miếng Gà Truyền</p>
-					 <p><span class="price">60.000VND</span></p>
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;">
-					<a href="details.php"><img src="images/hinh_2.jpg" alt="" /></a>
-					 <h2>Hamburger beef</h2>
-					 <p>1 Miếng Gà Giòn Cay / 1 Miếng Gà Giòn Không Cay / 1 Miếng Gà Truyền</p>
-					 <p><span class="price">70.000VND</span></p>   
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;">
-					<a href="details.php"><img src="images/hinh_3.png" alt="" /></a>
-					 <h2>Hamburger beef</h2>
-					 <p>1 Miếng Gà Giòn Cay / 1 Miếng Gà Giòn Không Cay / 1 Miếng Gà Truyền</p>
-					 <p><span class="price">150.000VND</span></p> 
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;">
-					<img src="images/hinh_4.png" alt="" />
-					 <h2>Hamburger beef</h2>
-					 <p>1 Miếng Gà Giòn Cay / 1 Miếng Gà Giòn Không Cay / 1 Miếng Gà Truyền</p>
-					 <p><span class="price">230.000VND</span></p>  
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
-				</div>
-			</div>
+				<?php 
+					  }
+	      	        }
+				 ?>
+		</div>
     </div>
  </div>
 
