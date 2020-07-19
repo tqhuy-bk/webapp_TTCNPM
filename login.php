@@ -33,13 +33,13 @@
                     <input name="password" type="password" class="field" placeholder="Enter password...">
             
                     <p class="note"><a href="#">Forgot passoword </a></p>
-                    <div><input class="login"style="background:#6492d6; margin-left:0px;" type ="submit" name="signin" value="Sign In" class="grey"></div>
+                    <div><input  style="background: #0c5a6c;" class="buysubmit"  type ="submit" name="signin" value="Sign In" ></div>
             </form>
             <br>
             <br>
             <br>
         </div>
-
+<!-- style="background:#6492d6;border: 1px solid #cecece;box-sizing: border-box;color: #444;display: block; font-size: 27px;height: 38px;text-align: center;" class="grey" -->
     	<div class="register_account">
     		<h3>Register New Account</h3>
     		<span><?php 
@@ -70,7 +70,7 @@
 		       </tr> 
 		    </tbody></table> 
 		   <br>
-		  <div><input class="login"style="background:#6492d6;width:200px;margin-left:0px;"  type ="submit" name="submit" value="Creat ccount" class="grey"></div>
+		  <div><input style="background: #0c5a6c;" class="buysubmit" type ="submit" name="submit" value="Creat ccount" ></div>
 		  
 		    <div class="clear"></div>
 		    </form>
