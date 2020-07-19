@@ -110,19 +110,13 @@
             			} 
             			else {
             				$check_search = $product->search($search);
+            				Session::set('search_value',$search);
                 			// Nếu có kết quả thì hiển thị, ngược lại thì thông báo không tìm thấy kết quả
                 			if ($check_search) {
-                    			// Vòng lặp while & mysql_fetch_assoc dùng để lấy toàn bộ dữ liệu có trong table và trả về dữ liệu ở dạng array.
-                    			echo '<table border="1" cellspacing="0" cellpadding="10">';
-                    			while ($row = $check_search->fetch_assoc()) {
-                        			echo '<tr>';
-                            			echo "<td>{$row['productName']}</td>";
-                        			echo '</tr>';
-                    			}
-                    			echo '</table>';
+                    			header('Location:search.php');
                 			} 
                 			else {
-                    			echo "Khong tim thay ket qua!";
+                    			echo "No result!";
                 			}           				
             			}
             		}
