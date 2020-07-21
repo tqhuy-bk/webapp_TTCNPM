@@ -271,6 +271,7 @@ button, input {
                             <label class="input-label">Email</label>
                             <input type="text" name="customerEmail" class="bYlDgr" value="<?php echo $result['customerEmail'] ?>">
                         </div>
+                        
                         <div class="form-control">
                             <label class="input-label">Giới tính</label>
                             <label class="Radio__StyledRadio-sim90b-0 euTTxE"><input type="radio" name="gender" value="male" checked=""><span class="radio-fake"></span><span class="label">Nam</span></label><label class="euTTxE"><input type="radio" name="gender" value="female"><span class="radio-fake"></span><span class="label">Nữ</span></label>
