@@ -1,4 +1,4 @@
-﻿<?php include 'inc/header.php';?>
+<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
 <?php 
    include '../classes/product.php';
@@ -33,14 +33,27 @@
 				  <th>Category</th>
 				  <th>Vendor</th>
           <th>Type</th>
-					<th>Action</th>
+          <?php $level=Session::get('level');?>
+          <?php if($level==3){ ?>
+          <th>Action</th>>
+           <?php
+              }
+              ?> 
+					
 				</tr>
 			</thead>
 			<tbody>
                 <?php 
+                    $level=Session::get('level');
+                    $vendorid=Session::get('vendorid');
                     $format= new Format();
                     $show = new product(); 
-                    $show_product= $show->show_product();
+                    if($level==1 or $level==2){
+                      $show_product= $show->show_product();
+                    }
+                    if($level==3 or $level==4){
+                      $show_product= $show->show_productvendor($vendorid);
+                    }
                     if($show_product){
                     	$i=0;
                     	while($result=$show_product->fetch_assoc()){
@@ -59,8 +72,13 @@
 					<td><?php echo $result['catName'] ?></td>
 					<td class="center"> <?php echo $result['catName'] ?></td>
           <td class="center"> <?php echo $result['type'] ?></td>
+          <?php $level=Session::get('level');?>
+          <?php if($level==3){ ?>
 					<td><a href="product_edit.php?productid=<?php echo $result['productID'] ?>">Edit</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Delete</a></td>
-				</tr>
+				   <?php
+              }
+              ?> 
+        </tr>
 				<?php 
 					 }
                     }
