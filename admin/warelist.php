@@ -33,7 +33,8 @@
                 <?php 
                     $format= new Format();
                     $show = new warehouseproduct(); 
-                    $show_product= $show->show_product();
+                    $vendor=Session::get('vendorid');
+                    $show_product= $show->show_product($vendor);
                     if($show_product){
                     	$i=0;
                     	while($result=$show_product->fetch_assoc()){
