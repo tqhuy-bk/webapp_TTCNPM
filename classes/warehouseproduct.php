@@ -57,10 +57,10 @@
                 }
             }
     	}
-        public function show_product(){
+        public function show_product($vendor){
             $query = "
             SELECT p.*
-            FROM tbl_warehouseproduct as p
+            FROM tbl_warehouseproduct as p WHERE vendor='$vendor'
              order by p.productID desc";
             //lấy các phần tử trong bảng rồi sắp xếp theo ID
             $result = $this->db->select($query);
