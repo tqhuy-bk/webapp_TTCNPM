@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 20, 2020 lúc 10:40 AM
--- Phiên bản máy phục vụ: 10.4.11-MariaDB
+-- Thời gian đã tạo: Th7 25, 2020 lúc 03:35 PM
+-- Phiên bản máy phục vụ: 10.4.13-MariaDB
 -- Phiên bản PHP: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_product`
+-- Cấu trúc bảng cho bảng `tbl_wareorder`
 --
 
 CREATE TABLE `tbl_wareorder` (
@@ -33,24 +33,25 @@ CREATE TABLE `tbl_wareorder` (
   `description` text NOT NULL,
   `amount` varchar(255) NOT NULL,
   `sender` text NOT NULL,
-  `status` text NOT NULL
+  `status` text NOT NULL,
+  `vendor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_product`
+-- Đang đổ dữ liệu cho bảng `tbl_wareorder`
 --
 
-INSERT INTO `tbl_wareorder` (`productID`, `productName`, `amount`, `description`, `sender`, `status`) VALUES
-(3, 'Mặt hàng A', 2000, 'wakeupbbwirowirowiro', 'Vendor 1', 'chờ xử lý'),
-(4, 'Mặt hàng B', 2010, 'swanswanswan', 'Vendor 2', 'chờ xử lý'),
-(5, 'Mặt hàng C', 1992, 'paradiseinfrontofmyeyes', 'Vendor 10', 'chờ xử lý');
+INSERT INTO `tbl_wareorder` (`productID`, `productName`, `description`, `amount`, `sender`, `status`, `vendor`) VALUES
+(3, 'Mặt hàng A', 'wakeupbbwirowirowiro', '2000', 'Vendor 1', 'chờ xử lý', 1),
+(4, 'Mặt hàng B', 'swanswanswan', '2010', 'Vendor 2', 'chờ xử lý', 2),
+(5, 'Mặt hàng C', 'paradiseinfrontofmyeyes', '1992', 'Vendor 10', 'đã xử lý', 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Chỉ mục cho bảng `tbl_product`
+-- Chỉ mục cho bảng `tbl_wareorder`
 --
 ALTER TABLE `tbl_wareorder`
   ADD PRIMARY KEY (`productID`);
@@ -60,7 +61,7 @@ ALTER TABLE `tbl_wareorder`
 --
 
 --
--- AUTO_INCREMENT cho bảng `tbl_product`
+-- AUTO_INCREMENT cho bảng `tbl_wareorder`
 --
 ALTER TABLE `tbl_wareorder`
   MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
