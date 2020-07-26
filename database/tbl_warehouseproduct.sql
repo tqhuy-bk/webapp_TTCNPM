@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbl_warehouseproduct` (
   `productID` int(11) NOT NULL,
   `productName` tinytext NOT NULL,
-  `amount` varchar(255) NOT NULL,
+  `amount` int(11) NOT NULL,
   `vendor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
