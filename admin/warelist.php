@@ -54,8 +54,6 @@
 			</tbody>
 		</table>
        </div>
-       <div class="button" style="margin-left:200px;margin-top:20px;background:#ffffff;width:200px;box-shadow: 0px 0px 2px 2px #999999;"><span><a href="wareadd.php"><center>Thêm hàng mới vào kho</center></a></span></div>
-       <div class="button" style="margin-left:200px;margin-top:20px;background:#ffffff;width:290px;box-shadow: 0px 0px 2px 2px #999999;"><span><a href="wareorderlist.php"><center>Xem danh sách hàng yêu cầu nhập kho</center></a></span></div>
     </div>
 </div>
 

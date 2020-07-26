@@ -12,7 +12,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Gửi đơn hàng mới</h2>
+        <h2>Yêu cầu lấy hàng trong kho</h2>
         <?php  
         if(isset($check_insert_product)){
             echo $check_insert_product;
@@ -39,6 +39,14 @@
                         <input type="text" name="amount" placeholder="Enter Amount..." class="medium" />
                     </td>
                 </tr>
+                 <tr>
+                    <td>
+                        <label>ID của vendor quản lý kho cần lấy hàng</label>
+                    </td>
+                    <td>
+                        <input type="text" name="vendorid" placeholder="Enter ID..." class="medium" />
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <label>Description</label>
@@ -56,6 +64,47 @@
             </table>
             </form>
         </div>
+        <div class="block"> 
+        <h2>Danh sách đơn đã gửi</h2>
+            <table class="data display " id="example">
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Product Name</th>
+                    <th>Amount</th>
+          <th>Description</th>
+          <th>Người yêu cầu</th>
+          <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                    $format= new Format();
+                    $show = new wareorder();
+                    $ad=Session::get('adminName');
+                    $ten = $ad;
+                    $show_product= $show->show_product_to_chef($ten);
+                    if($show_product){
+                        $i=0;
+                        while($result=$show_product->fetch_assoc()){
+                            $i++;
+                    
+                 ?>
+                <tr class="odd gradeX">
+                    <td><center><?php echo $i ?></center></td>
+                    <td><?php echo $result['productName'] ?></td>
+                    <td><center><?php echo $result['amount'] ?></center></td>
+          <td><center><?php echo $result['description'] ?></center></td>
+          <td><center><?php echo $result['sender'] ?></center></td>
+          <td><center><?php echo $result['status'] ?></center></td>
+                </tr>
+                <?php 
+                     }
+                    }
+                 ?>
+            </tbody>
+        </table>
+       </div>
     </div>
 </div>
 <!-- Load TinyMCE -->

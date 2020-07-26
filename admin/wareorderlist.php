@@ -11,9 +11,12 @@
     $delete= $product->delete_product($id);
    }
    
-if(isset($_GET['changeid'])){ 
-    $id= $_GET['changeid'];
-    $delete= $product->change_status_product($id);
+if(isset($_GET['getname'])){ 
+    $id=$_GET['getid'];
+    $name= $_GET['getname'];
+    $amo=$_GET['changeamount'];
+    $vendor=$_GET['vendorid'];
+    $delete= $product->change_status_product($id,$name,$amo,$vendor);
    }
 
  ?>
@@ -56,7 +59,7 @@ if(isset($_GET['changeid'])){
           <td><center><?php echo $result['description'] ?></center></td>
           <td><center><?php echo $result['sender'] ?></center></td>
           <td><center><?php echo $result['status'] ?></center></td>
-					<td><a href="?changeid=<?php echo $result['productID'] ?>">Xử lý</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Delete</a></td>
+					<td><a href="?getname=<?php echo $result['productName']?>&getid=<?php echo $result['productID']?>&changeamount=<?php echo $result['amount']?>&vendorid=$vendor">Xử lý</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Delete</a></td>
 				</tr>
 				<?php 
 					 }
