@@ -33,5 +33,18 @@ class Format{
     }
     return $title = ucfirst($title);
    }
+ public function format_money($n=0){// dùng để thêm dấu chấm vào trong hiển thị số tiền
+    $n=(string)$n;
+    $n=strrev($n);
+    $res='';
+    for($i=0;$i<strlen($n);$i++){
+        if($i%3==0 && $i!= 0){
+            $res.='.';
+        }
+        $res.=$n[$i];
+    }
+    $res = strrev($res);
+    return $res;
+  }
 }
 ?>
