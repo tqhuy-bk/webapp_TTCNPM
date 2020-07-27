@@ -33,7 +33,7 @@
 					<h2><?php echo $result['productName'] ?></h2>
 					<p><?php echo  $result['description'] ?></p>					
 					<div class="price">
-						<p>Price: <span><?php echo $result['price'] ?>VND</span></p>
+						<p>Price: <span><?php echo  $fm->format_money($result['price']) ?> vnđ</span></p>
 						<p>Category: <span><?php echo $result['catName'] ?> </span></p>
 						<p>Vendor: <span><?php echo $result['catName'] ?> </span> </p>
 					</div>
