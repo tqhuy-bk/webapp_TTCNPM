@@ -86,7 +86,7 @@
 									<td class="td"><a style="color:rgb(0, 127, 240);"href="orderdetail.php?date_order=<?php echo $result['date_order'] ?>"><?php echo $result['orderlistID'] ?></a></td>
 									<td class="td"><?php echo $result['date_order'] ?></td>
 									<td class="td"><?php echo $result['description']?> + ...</td>
-									<td class="td"><?php echo $result['price'] ?></td>
+									<td class="td"><?php echo  $fm->format_money($result['price']) ?></td>
 									<td class="td"><?php  echo $result['state'] ?></td>
 								</tr>
 								<?php 
