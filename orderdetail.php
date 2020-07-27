@@ -112,14 +112,14 @@ p {
 							<tr>
 								<td><?php echo $result['productName'] ?></td>
 								<td><img style ="width:100px;height:70px;" src="admin/uploads/<?php echo $result['image'] ?>" alt=""/></td>
-								<td><?php echo $result['price'] ?></td>
+								<td><?php echo  $fm->format_money($result['price']) ?></td>
 								<td> <?php echo $result['quantity'] ?></td>
 								<?php 
 								   $total_price = $result['quantity']*$result['price'];
 								   $sum_price += $total_price;
 								   Session::set('sum',$sum_price);
 								?>
-								<td><?php echo $total_price?></td>
+								<td><?php echo  $fm->format_money($total_price)?></td>
 								<td><?php echo $result['date_order'] ?></td>
 								<td><a href="">Processing</a></td>
 							</tr>
@@ -132,7 +132,7 @@ p {
 							<br>
 							<tr>
 								<th style=" color:red;font-size:30px;">Total : </th>
-								<td style=" color:red;font-size:20px;"><?php echo $sum_price  ?> VND</td>
+								<td style=" color:red;font-size:20px;"><?php echo  $fm->format_money($sum_price)  ?> VND</td>
 							</tr>
 							
 					   </table>
