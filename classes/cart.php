@@ -61,6 +61,14 @@
             $result = $this->db->select($query);
             return $result;
         }
+        public function show_cart_detail(){
+            $sessionID=session_id();
+            $query = "
+            SELECT cart.*,vendor.vendorName,p.description
+            FROM tbl_cart as cart,tbl_vendor as vendor,tbl_product as p WHERE sessionID ='$sessionID' AND cart.productID=p.productID AND p.vendorID=vendor.vendorID order by cartID desc";
+            $result = $this->db->select($query);
+            return $result;
+        }
         public function update_quantity($quantity,$cartID){
            $quantity = mysqli_real_escape_string($this->db->link, $quantity);
            $id = mysqli_real_escape_string($this->db->link, $cartID);
