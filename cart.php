@@ -48,7 +48,7 @@
 							<tr>
 								<td><?php echo $result['productName'] ?></td>
 								<td><img style ="width:100px;height:70px;" src="admin/uploads/<?php echo $result['image'] ?>" alt=""/></td>
-								<td><?php echo $result['price'] ?></td>
+								<td><?php echo  $fm->format_money($result['price']) ?></td>
 								<td>
 									<form action="" method="post">
 										<input type="hidden" name="cartID" value="<?php echo $result['cartID'] ?>"/>
@@ -61,7 +61,7 @@
 								   $sum_price += $total_price;
 								   Session::set('sum',$sum_price);
 								?>
-								<td><?php echo $total_price?></td>
+								<td><?php echo  $fm->format_money($total_price)?></td>
 								<td><a href="?delete_product_id=<?php echo $result['productID'] ?>">Delete</a></td>
 							</tr>
                              <?php 
@@ -73,7 +73,7 @@
 							<br>
 							<tr>
 								<th style=" color:red;font-size:30px;">Total : </th>
-								<td style=" color:red;font-size:20px;"><?php echo $sum_price  ?> VND</td>
+								<td style=" color:red;font-size:20px;"><?php echo  $fm->format_money($sum_price)  ?> VND</td>
 							</tr>
 							
 					   </table>
