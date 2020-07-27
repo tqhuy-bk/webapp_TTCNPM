@@ -16,11 +16,11 @@
 	      	        if($get_product_combo){
 	      	        	while($result=$get_product_combo->fetch_assoc()){//lay du lieu vao bien result
 	      	     ?>
-				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;margin: 1% 0% 1% 0%;">
-					 <a href="details.php?productid=<?php echo $result['productID'] ?>"><img src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
+				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;margin: 1% 0.7% 1% 0.5%;">
+					 <a href="details.php?productid=<?php echo $result['productID'] ?>"><img style="max-height:250px;min-width: 200px;min-height:245px;margin-bottom: 10px;" src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
 					 <h2><?php echo $result['productName'] ?></h2>
 					 <p><?php echo $fm->textShorten($result['description'],30) ?></p>
-					 <p><span class="price"><?php echo $result['price'] ?>VND</span></p>
+					 <p><span class="price"><?php echo $fm->format_money($result['price'])?> vnđ</span></p>
 				     <div class="button"><span><a href="details.php?productid=<?php echo $result['productID'] ?>" class="details">Details</a></span></div>
 				</div>
 				<?php 
@@ -40,12 +40,14 @@
 	      	        if($get_product_discount){
 	      	        	while($result=$get_product_discount->fetch_assoc()){//lay du lieu vao bien result
 	      	     ?>
-				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;margin: 1% 0% 1% 0%;">
-					 <a href="details.php?productid=<?php echo $result['productID'] ?>"><img src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
+				<div class="grid_1_of_4 images_1_of_4" style=" min-height:390px;margin: 1% 0.7% 1% 0.5%;">
+					 <a href="details.php?productid=<?php echo $result['productID'] ?>"><img style="max-height:250px;min-width: 200px;min-height:245px;margin-bottom: 10px;" src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
 					 <h2><?php echo $result['productName'] ?></h2>
 					 <p><?php echo $fm->textShorten($result['description'],30) ?></p>
-					 <p><span class="price"><?php echo $result['price'] ?>VND</span></p>
-				     <div class="button"><span><a href="details.php?productid=<?php echo $result['productID'] ?>" class="details">Details</a></span></div>
+					 <p><span class="price"><?php echo $fm->format_money($result['price']) ?> vnđ</span></p>
+				     <div class="button" >
+				     	<span ><a href="details.php?productid=<?php echo $result['productID'] ?>" class="details">Details</a></span>
+				     </div>
 				</div>
 				<?php 
 					  }
