@@ -31,7 +31,7 @@ CREATE TABLE `tbl_wareorder` (
   `productID` int(11) NOT NULL,
   `productName` tinytext NOT NULL,
   `description` text NOT NULL,
-  `amount` varchar(255) NOT NULL,
+  `amount` int(11) NOT NULL,
   `sender` text NOT NULL,
   `status` text NOT NULL,
   `vendor` int(11) NOT NULL

@@ -28,6 +28,7 @@
             $ad=Session::get('adminName');
             $sender=$ad;
             $status = "chờ xử lý";
+            $vendor = mysqli_real_escape_string($this->db->link, $data['vendorid']);
 
 
             //kiem tra va cho vao foad
@@ -42,20 +43,20 @@
             // $uploaded_image = "D/xampp/htdocs/shop/admin/uploads".$unique_image;
             
 
-            if($productName=="" || $amount=="" || $sender==""){
+            if($productName=="" || $amount=="" || $sender==""||$vendor==""){
             	$alert= "<span class='error' > fiels must be not empty</span>";
             	return $alert;
             }
             else{
                 //move_uploaded_file($_FILES['image']['tmp_name'], "uploads/$file_name");
-            	$query ="INSERT INTO tbl_wareorder(productName,amount,description,sender,status) VALUES('$productName','$amount','$description','$sender','$status')"; 
+            	$query ="INSERT INTO tbl_wareorder(productName,amount,description,sender,status,vendor) VALUES('$productName','$amount','$description','$sender','$status','$vendor')"; 
             	$result = $this->db->insert($query);
                 if($result){
-                    $alert="<span class ='success'> Insert product completion</span>";
+                    $alert="<span class ='success'>Đã gửi yêu cầu cho vendor</span>";
                     return $alert;
                 }
                 else{
-                    $alert="<span class ='error'> Insert product not completion</span>";
+                    $alert="<span class ='error'>Chưa gửi được yêu cầu</span>";
                     return $alert;
                 }
             }
@@ -64,6 +65,15 @@
             $query = "
             SELECT p.*
             FROM tbl_wareorder as p WHERE vendor='$vendor'
+             order by p.productID desc";
+            //lấy các phần tử trong bảng rồi sắp xếp theo ID
+            $result = $this->db->select($query);
+            return $result;
+        }
+        public function show_product_to_chef($chefname){
+            $query = "
+            SELECT p.*
+            FROM tbl_wareorder as p WHERE sender LIKE '%$chefname%'
              order by p.productID desc";
             //lấy các phần tử trong bảng rồi sắp xếp theo ID
             $result = $this->db->select($query);
@@ -103,7 +113,7 @@
                     $query ="UPDATE tbl_wareorder  SET productName ='$productName',amount='$amount',description='$description' WHERE productID = '$id'";
                  $result = $this->db->update($query);
                     if($result){
-                        $alert="<span class ='success'> Update prouct completion</span>";
+                        $alert="<span class ='success'> Update product completion</span>";
                          return $alert;
                     }
                     else{
@@ -127,20 +137,52 @@
             }
         }
 
-        public function change_status_product($id){
-            $query = "SELECT * FROM tbl_wareorder WHERE productID='$id' ";
+        public function change_status_product($id,$name,$amo,$vendor){
+            $query = "SELECT * FROM tbl_wareorder WHERE productID='$id' AND status='đã xử lý' ";
+            $ketqua =$this->db->select($query);
+            if ($ketqua)
+            {$alert= "<span class='error' >Yêu cầu này đã được xử lý rồi!</span>";
+            return $alert;}
+            else
+            {
+            $query = "SELECT * FROM tbl_warehouseproduct WHERE productName LIKE '%$name%' AND amount<'$amo' AND vendor='$vendor' ";
+            $ketq =$this->db->select($query);
+            if ($ketq)
+            {$alert= "<span class='error' >Mặt hàng này không đủ số lượng yêu cầu!</span>";
+            return $alert;}
+            else
+            {
+            $query = "SELECT * FROM tbl_warehouseproduct WHERE productName LIKE '%$name%' AND vendor='$vendor'";
             //chọn phần tử trong bảng với đk catID= id 
             $result = $this->db->select($query);
-            if($result){
-                $query ="UPDATE tbl_wareorder  SET status ='đã xử lý' WHERE productID = '$id'";
-                $res = $this->db->update($query);
-                $alert= "<span class='success' > Change status successful</span>";
+            if ($result)
+            {
+                     $query ="UPDATE tbl_warehouseproduct  SET amount=amount-'$amo' WHERE productName LIKE '%$name%' AND vendor='$vendor'";
+                    $res = $this->db->update($query);
+                    if($res){
+                    $query ="UPDATE tbl_wareorder  SET status ='đã xử lý' WHERE productID = '$id'";
+                    $dadada = $this->db->update($query);
+                    $alert= "<span class='success' >Đã xử lý xong</span>";
+                    return $alert;
+                    }
+                    else{
+                    $alert= "<span class='error' >Không được xử lý</span>";
+                    return $alert;
+                    }
+                
+                /*else
+                {
+                 $alert= "<span class='error' >Không thể xử lý do không đủ số lượng hàng yêu cầu!</span>";
+                return $alert;
+                }*/
+            }
+            else 
+            {
+                $alert= "<span class='error' >Mặt hàng yêu cầu chưa có trong kho. Hãy thêm mặt hàng này vào kho trước!</span>";
                 return $alert;
             }
-            else{
-                $alert= "<span class='error' > Can't change status of this order</span>";
-                return $alert;
-            }
+        }
+    }
         }
         ///////////////
       

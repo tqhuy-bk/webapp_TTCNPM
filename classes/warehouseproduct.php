@@ -25,7 +25,7 @@
            
             $productName = mysqli_real_escape_string($this->db->link, $data['productName']);
             $amount = mysqli_real_escape_string($this->db->link, $data['amount']);
-
+            $vendor = Session::get('vendorid');
 
             //kiem tra va cho vao foad
             // $permited = array('jpg','jpeg','png','gif');
@@ -45,7 +45,7 @@
             }
             else{
                 //move_uploaded_file($_FILES['image']['tmp_name'], "uploads/$file_name");
-            	$query ="INSERT INTO tbl_warehouseproduct(productName,amount) VALUES('$productName','$amount')"; 
+            	$query ="INSERT INTO tbl_warehouseproduct(productName,amount,vendor) VALUES('$productName','$amount','$vendor')"; 
             	$result = $this->db->insert($query);
                 if($result){
                     $alert="<span class ='success'> Insert product completion</span>";
@@ -110,7 +110,7 @@
         }
         ///////////////
         
-       public function search($search){
+      /* public function search($search){
             // Dùng câu lênh like trong sql và sứ dụng toán tử % của php để tìm kiếm dữ liệu chính xác hơn.
             $query = "SELECT * FROM tbl_product WHERE productName LIKE '%$search%'";
             // Thực thi câu truy vấn
@@ -122,6 +122,6 @@
             else {
                 echo "Khong tim thay ket qua!";
             }
-        }
+        }*/
     }
  ?>

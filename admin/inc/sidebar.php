@@ -87,7 +87,8 @@
             
                 <li><a class="menuitem" style=" background:#ef9478;" href="warelist.php">Nhà kho</a>
                     <ul class="submenu">
-                        <li><a href="wareordersend.php">Yêu cầu nhập kho</a> </li>
+                        <li><a href="wareadd.php">Thêm hàng mới vào kho</a> </li>
+                        <li><a href="wareorderlist.php">Xem danh sách yêu cầu lấy hàng từ bếp</a> </li>
                     </ul>
                 </li>
                       ';
@@ -115,7 +116,7 @@
             
                 <li><a class="menuitem" style=" background:#ef9478;" href="warelist.php">Nhà kho</a>
                     <ul class="submenu">
-                        <li><a href="wareordersend.php">Yêu cầu nhập kho</a> </li>
+                        <li><a href="wareordersend.php">Yêu cầu lấy hàng trong kho</a> </li>
                     </ul>
                 </li>
                       ';
