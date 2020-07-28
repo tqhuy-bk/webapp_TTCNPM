@@ -75,7 +75,7 @@ p {
  </style>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Order detail</h2>
+                <h2>Thông tin đơn hàng</h2>
                 <div class="kHWfJY">
                   <?php 
                      $customer= new customer();
@@ -102,13 +102,13 @@ p {
               </div>
               <table class="tblone">
                   <tr>
-                    <th width="20%">Product Name</th>
-                    <th width="10%">Image</th>
-                    <th width="15%">Price</th>
-                    <th width="20%">Quantity</th>
-                    <th width="20%">Total Price</th>
-                    <th  width="20%">Date Order</th>
-                    <th width="10%">State</th>
+                    <th width="20%">Mặt hàng</th>
+                    <th width="10%">Hình ảnh</th>
+                    <th width="15%">Giá tiền</th>
+                    <th width="20%">Số lượng</th>
+                    <th width="20%">Thành tiền</th>
+                    <th  width="20%">Ngày đặt hàng</th>
+                    <th width="10%">Trạng thái</th>
                   </tr>
                     <?php 
                         $order= new order();
@@ -129,7 +129,7 @@ p {
                     ?>
                     <td><?php echo $total_price?></td>
                     <td><?php echo $result['date_order'] ?></td>
-                    <td><a href="">Processing</a></td>
+                    <td><a href="">Đang thực hiện</a></td>
                   </tr>
                                  <?php 
                                     }
@@ -139,8 +139,8 @@ p {
                 <table style="float:right;text-align:left;" width="40%">
                   <br>
                   <tr>
-                    <th style=" color:red;font-size:20px;">Total : </th>
-                    <td style=" color:red;font-size:20px;"><?php echo $sum_price  ?> VND</td>
+                    <th style=" color:red;font-size:20px;">Tổng cộng: </th>
+                    <td style=" color:red;font-size:20px;"><?php echo $sum_price  ?> đồng</td>
                   </tr>
                   
              </table>

@@ -151,15 +151,15 @@
                         <form action="" method="post">
                            
                             <div class="form-control ">
-                                <label class="input-label">Name</label>
+                                <label class="input-label">Tên</label>
                                 <div><input type="text" name="adminName" maxlength="128" class="bYlDgr" value="<?php echo $result['adminName'] ?>"></div>
                             </div>
                             <div class="form-control ">
-                                <label class="input-label">Admin User</label>
+                                <label class="input-label">Tên đăng nhập</label>
                                 <div><input type="text" name="adminUser" maxlength="128" class="bYlDgr" value="<?php echo $result['adminUser'] ?>"></div>
                             </div>
                             <div class="form-control ">
-                                <label class="input-label">Role</label><div><input type="text" name="role" class="bYlDgr" disabled="" value="<?php echo $result['role'] ?>"></div>
+                                <label class="input-label">Chức vụ</label><div><input type="text" name="role" class="bYlDgr" disabled="" value="<?php echo $result['role'] ?>"></div>
                             </div>
                             <div class="form-control">
                                 <label class="input-label">Email</label>
@@ -167,7 +167,7 @@
                             </div>
                             <div class="form-control">
                                 <label class="input-label">&nbsp;</label>
-                                <button type="submit" name= "submit" class="btn-submit">Update</button>
+                                <button type="submit" name= "submit" class="btn-submit">Cập nhật</button>
                             </div>
                             <?php  
                                     if(isset($check_update_info)){

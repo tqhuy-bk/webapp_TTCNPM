@@ -12,7 +12,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Thêm hàng vào kho</h2>
+        <h2>Thêm hàng mới vào kho</h2>
         <?php  
         if(isset($check_insert_product)){
             echo $check_insert_product;
@@ -25,24 +25,24 @@
                
                 <tr>
                     <td>
-                        <label>Name</label>
+                        <label>Tên</label>
                     </td>
                     <td>
-                        <input type="text" name="productName" placeholder="Enter Product Name..." class="medium" />
+                        <input type="text" name="productName" placeholder="Nhập tên hàng..." class="medium" />
                     </td>
                 </tr>
 				        <tr>
                     <td>
-                        <label>Amount</label>
+                        <label>Số lượng</label>
                     </td>
                     <td>
-                        <input type="text" name="amount" placeholder="Enter Amount..." class="medium" />
+                        <input type="text" name="amount" placeholder="Nhập số lượng..." class="medium" />
                     </td>
                 </tr>
 				        <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Save" />
+                        <input type="submit" name="submit" Value="Thêm" />
                     </td>
                 </tr>
             </table>

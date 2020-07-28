@@ -16,7 +16,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Add New Product</h2>
+        <h2>Thêm mặt hàng mới</h2>
         <?php  
         if(isset($check_insert_product)){
             echo $check_insert_product;
@@ -29,15 +29,15 @@
                
                 <tr>
                     <td>
-                        <label>Name</label>
+                        <label>Tên</label>
                     </td>
                     <td>
-                        <input type="text" name="productName" placeholder="Enter Product Name..." class="medium" />
+                        <input type="text" name="productName" placeholder="Nhập tên mặt hàng..." class="medium" />
                     </td>
                 </tr>
 				<tr>
                     <td>
-                        <label>Category</label>
+                        <label>Danh mục</label>
                     </td>
                     <td>
                         <select id="select" name="category">
@@ -58,7 +58,7 @@
                 </tr>
 				        <tr>
                     <td>
-                        <label>Vendor</label>
+                        <label>Nhà cung cấp</label>
                     </td>
                     <td>
                         <select id="select" name="vendor">
@@ -79,36 +79,36 @@
 				
 				        <tr>
                     <td style="vertical-align: top; padding-top: 9px;">
-                        <label>Description</label>
+                        <label>Mô tả mặt hàng</label>
                     </td>
                     <td>
-                        <textarea name="description" ></textarea>
+                        <textarea name="Mô tả mặt hàng" ></textarea>
                     </td>
                 </tr>
 				        <tr>
                     <td>
-                        <label>Price</label>
+                        <label>Giá tiền</label>
                     </td>
                     <td>
-                        <input type="text" name="price" placeholder="Enter Price..." class="medium" />
+                        <input type="text" name="price" placeholder="Nhập giá tiền..." class="medium" />
                     </td>
                 </tr>
                  <tr>
                     <td>
-                        <label>Type</label>
+                        <label>Loại</label>
                     </td>
                     <td>
                         <select id="select" name="type">
                             <option value="combo">combo</option>
-                            <option value="discount">discount</option>
-                            <option value="drinks">drinks</option>
-                            <option value="foods">foods</option>
+                            <option value="discount">giảm giá</option>
+                            <option value="drinks">đồ uống</option>
+                            <option value="foods">món ăn</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>Upload Image</label>
+                        <label>Tải hình ảnh lên</label>
                     </td>
                     <td>
                         <input type="file" name="image"/>
@@ -118,7 +118,7 @@
 				        <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Save" />
+                        <input type="submit" name="submit" Value="Thêm" />
                     </td>
                 </tr>
             </table>

@@ -32,12 +32,12 @@ if(isset($_GET['getname'])){
             <table class="data display " id="example">
 			<thead>
 				<tr>
-					<th>Serial No.</th>
-					<th>Product Name</th>
-					<th>Amount</th>
-          <th>Description</th>
+					<th>Số thứ tự</th>
+					<th>Tên hàng hóa</th>
+					<th>Số lượng</th>
+          <th>Mô tả</th>
           <th>Người yêu cầu</th>
-          <th>Status</th>
+          <th>Trạng thái</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -59,7 +59,7 @@ if(isset($_GET['getname'])){
           <td><center><?php echo $result['description'] ?></center></td>
           <td><center><?php echo $result['sender'] ?></center></td>
           <td><center><?php echo $result['status'] ?></center></td>
-					<td><a href="?getname=<?php echo $result['productName']?>&getid=<?php echo $result['productID']?>&changeamount=<?php echo $result['amount']?>&vendorid=$vendor">Xử lý</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Delete</a></td>
+					<td><a href="?getname=<?php echo $result['productName']?>&getid=<?php echo $result['productID']?>&changeamount=<?php echo $result['amount']?>&vendorid=$vendor">Xử lý</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Xóa</a></td>
 				</tr>
 				<?php 
 					 }

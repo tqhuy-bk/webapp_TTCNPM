@@ -25,7 +25,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Edit Product</h2>
+        <h2>Chỉnh sửa mặt hàng</h2>
         <span> <?php 
                    if(isset($check_update_product)==true){
                       echo $check_update_product; 
@@ -45,7 +45,7 @@
                
                 <tr>
                     <td>
-                        <label>Name</label>
+                        <label>Tên</label>
                     </td>
                     <td>
                         <input type="text" name="productName" value="<?php echo $result_product['productName'] ?>" class="medium" />
@@ -53,7 +53,7 @@
                 </tr>
         <tr>
                     <td>
-                        <label>Category</label>
+                        <label>Danh mục</label>
                     </td>
                     <td>
                         <select id="select" value name="category">
@@ -78,7 +78,7 @@
                 </tr>
         <tr>
                     <td>
-                        <label>Vendor</label>
+                        <label>Nhà cung cấp</label>
                     </td>
                     <td>
                         <select id="select" name="vendor">
@@ -103,7 +103,7 @@
         
                 <tr>
                     <td style="vertical-align: top; padding-top: 9px;">
-                        <label>Description</label>
+                        <label>Mô tả mặt hàng</label>
                     </td>
                     <td>
                         <textarea name="description" value="<?php echo $result_product['description'] ?>"></textarea>
@@ -111,7 +111,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Price</label>
+                        <label>Giá tiền</label>
                     </td>
                     <td>
                         <input type="text" name="price" value="<?php echo $result_product['price'] ?>" class="medium" />
@@ -119,20 +119,20 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Type</label>
+                        <label>Loại</label>
                     </td>
                     <td>
                         <select id="select" name="type">
                             <option value="combo">combo</option>
-                            <option value="discount">discount</option>
-                            <option value="drinks">drinks</option>
-                            <option value="foods">foods</option>
+                            <option value="discount">giảm giá</option>
+                            <option value="drinks">đồ uống</option>
+                            <option value="foods">món ăn</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>Upload Image</label>
+                        <label>Tải lên hình ảnh</label>
                     </td>
                     <td>
                       <?php  
@@ -146,7 +146,7 @@
         <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Update" />
+                        <input type="submit" name="submit" Value="Cập nhật" />
                     </td>
                 </tr>
             </table>

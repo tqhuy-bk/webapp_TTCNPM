@@ -14,30 +14,30 @@
                 </li> -->
 
                 <?php $level= Session::get('level')?>
-                <li><a href="infoAdmin.php"class="menuitem" style=" background:#ef9478;">My account</a></li>
+                <li><a href="infoAdmin.php"class="menuitem" style=" background:#ef9478;">Tài khoản của tôi</a></li>
                 <?php 
                     if($level==1){
                       echo '
                       <li><a class="menuitem" style=" background:#ef9478;">Product</a>
                             <ul class="submenu">
-                                <li><a href="productlist.php">Product List</a> </li>
+                                <li><a href="productlist.php">Danh sách mặt hàng</a> </li>
                             </ul>
                       </li>
-                      <li><a class="menuitem" style=" background:#ef9478;">Vendor Option</a>
+                      <li><a class="menuitem" style=" background:#ef9478;">Tùy chỉnh nhà cung cấp</a>
                             <ul class="submenu">
-                                <li><a href="vendoradd.php">Add Vendor</a> </li>
-                                <li><a href="vendorlist.php">Vendor List</a> </li>
+                                <li><a href="vendoradd.php">Thêm nhà cung cấp</a> </li>
+                                <li><a href="vendorlist.php">Danh sách nhà cung cấp</a> </li>
                             </ul>
                       </li>
-                     <li><a class="menuitem" style=" background:#ef9478;">Category Option</a>
+                     <li><a class="menuitem" style=" background:#ef9478;">Tùy chỉnh danh mục</a>
                             <ul class="submenu">
-                                <li><a href="catadd.php">Add New Category</a> </li>
-                                <li><a href="catlist.php">Category List</a> </li>
+                                <li><a href="catadd.php">Thêm danh mục mới</a> </li>
+                                <li><a href="catlist.php">Danh sách danh mục</a> </li>
                             </ul>
                      </li>
-                     <li><a class="menuitem" style=" background:#ef9478;">Members</a>
+                     <li><a class="menuitem" style=" background:#ef9478;">Thành viên</a>
                                 <ul class="submenu">
-                                <li><a href="memeber.php">Member List</a> </li>
+                                <li><a href="memeber.php">Danh sách thành viên</a> </li>
                             </ul>
                         </li>
                       ';
@@ -46,19 +46,19 @@
                  <?php 
                     if($level==2){
                       echo '
-                      <li><a class="menuitem" style=" background:#ef9478;">Product</a>
+                      <li><a class="menuitem" style=" background:#ef9478;">Mặt hàng</a>
                             <ul class="submenu">
-                                <li><a href="productlist.php">Product List</a> </li>
+                                <li><a href="productlist.php">Danh sách mặt hàng</a> </li>
                             </ul>
                       </li>
-                      <li><a class="menuitem" style=" background:#ef9478;">Vendor Option</a>
+                      <li><a class="menuitem" style=" background:#ef9478;">Tùy chỉnh nhà cung cấp</a>
                             <ul class="submenu">
-                                <li><a href="vendorlist.php">Vendor List</a> </li>
+                                <li><a href="vendorlist.php">Danh sách nhà cung cấp</a> </li>
                             </ul>
                       </li>
-                     <li><a class="menuitem" style=" background:#ef9478;">Category Option</a>
+                     <li><a class="menuitem" style=" background:#ef9478;">Tùy chỉnh danh mục</a>
                             <ul class="submenu">
-                                <li><a href="catlist.php">Category List</a> </li>
+                                <li><a href="catlist.php">Danh sách danh mục</a> </li>
                             </ul>
                      </li>
                       ';
@@ -67,21 +67,21 @@
 				 <?php 
                     if($level==3){
                       echo '
-                      <li><a class="menuitem" style=" background:#ef9478;">Product</a>
+                      <li><a class="menuitem" style=" background:#ef9478;">Mặt hàng</a>
                             <ul class="submenu">
-                                <li><a href="productadd.php">Add Product</a> </li>
-                                <li><a href="productlist.php">Product List</a> </li>
+                                <li><a href="productadd.php">Thêm mặt hàng mới</a> </li>
+                                <li><a href="productlist.php">Danh sách mặt hàng</a> </li>
                             </ul>
                       </li>
-                     <li><a class="menuitem" style=" background:#ef9478;">Category Option</a>
+                     <li><a class="menuitem" style=" background:#ef9478;">Tùy chỉnh danh mục</a>
                             <ul class="submenu">
-                                <li><a href="catadd.php">Add Category</a> </li>
-                                <li><a href="catlist.php">Category List</a> </li>
+                                <li><a href="catadd.php">Thêm danh mục mới</a> </li>
+                                <li><a href="catlist.php">Danh sách danh mục</a> </li>
                             </ul>
                      </li>
-                      <li><a class="menuitem" style=" background:#ef9478;">Order</a>
+                      <li><a class="menuitem" style=" background:#ef9478;">Đơn hàng</a>
                     <ul class="submenu">
-                        <li><a href="vieworder.php"> View Order</a> </li>
+                        <li><a href="vieworder.php">Xem đơn hàng</a> </li>
                     </ul>
                 </li>
             
@@ -97,20 +97,20 @@
                  <?php 
                     if($level==4){
                       echo '
-                      <li><a class="menuitem" style=" background:#ef9478;">Product</a>
+                      <li><a class="menuitem" style=" background:#ef9478;">Mặt hàng</a>
                             <ul class="submenu">
-                                <li><a href="productlist.php">Product List</a> </li>
+                                <li><a href="productlist.php">Danh sách mặt hàng</a> </li>
                             </ul>
                       </li>
-                     <li><a class="menuitem" style=" background:#ef9478;">Category Option</a>
+                     <li><a class="menuitem" style=" background:#ef9478;">Tùy chỉnh danh mục</a>
                             <ul class="submenu">
-                                <li><a href="catadd.php">Add Category</a> </li>
-                                <li><a href="catlist.php">Category List</a> </li>
+                                <li><a href="catadd.php">Thêm danh mục mới</a> </li>
+                                <li><a href="catlist.php">Danh sách danh mục</a> </li>
                             </ul>
                      </li>
-                      <li><a class="menuitem" style=" background:#ef9478;">Order</a>
+                      <li><a class="menuitem" style=" background:#ef9478;">Đơn hàng</a>
                     <ul class="submenu">
-                        <li><a href="vieworder.php"> View Order</a> </li>
+                        <li><a href="vieworder.php">Xem đơn hàng</a> </li>
                     </ul>
                 </li>
             
