@@ -9,6 +9,7 @@ Perform the following steps:
 1. Install XAMPP / Wamp / Mamp/ Lamp (anyone).
 2. Download project - Add project to xampp's htdocs.
 3. Add database "shop.sql" to phpmyadmin.
+
 If you don't know, how to setup this project on your localhost then watch this youtube video:
 https://youtu.be/aBiIgUhe0Jk
 
