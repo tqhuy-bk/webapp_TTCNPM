@@ -15,6 +15,7 @@
    $product = new product();
    $category = new category();
    $bankaccount = new bankaccount();
+   $order = new order();
  ?>
 <?php
   header("Cache-Control: no-cache, must-revalidate");
