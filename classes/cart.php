@@ -32,7 +32,7 @@
             $query_check_product = "SELECT * FROM tbl_cart WHERE sessionID='$sessionID' AND productID='$id'";
             $result_check=$this->db->select($query_check_product);
             if($result_check){
-                $alert=" <span style='color:red;font-size:25px;'>Product already add to cart</span>";
+                $alert=" <span style='color:red;font-size:25px;'>Mặt hàng này đã được thêm vào giỏ hàng rồi!</span>";
                 return $alert;
             }
             else{  
@@ -43,11 +43,11 @@
                 $query_cart ="INSERT INTO tbl_cart(productID,sessionID,productName,quantity,price,image) VALUES('$id','$sessionID','$productName','$quantity','$price','$image')"; 
                 $result_cart = $this->db->insert($query_cart);
                     if($result_cart){
-                         $alert="<span style='color:green;font-size:25px;'> Add product to cart completion</span>";
+                         $alert="<span style='color:green;font-size:25px;'>Thêm hàng vào giỏ thành công</span>";
                         return $alert;
                     }
                     else{
-                         $alert="<span style='color:red;font-size:25px;'> Add product to cart not completion</span>";
+                         $alert="<span style='color:red;font-size:25px;'>Thêm hàng vào giỏ thất bại</span>";
                          return $alert;
                     }   
             }
@@ -78,7 +78,7 @@
                    header('Location:cart.php');
                 }
                 else{
-                    $alert="<span style='color:red;font-size:25px;'> Update quantity not completion</span>";
+                    $alert="<span style='color:red;font-size:25px;'>Cập nhật số lượng thất bại</span>";
                     return $alert;
                 } 
         }
@@ -89,7 +89,7 @@
                 header('Location:cart.php');
             }
             else{
-                $alert= "<span style='color:red;font-size:25px;'> Dalete not completion</span>";
+                $alert= "<span style='color:red;font-size:25px;'>Xóa không thành công</span>";
                 return $alert;
             }
         }

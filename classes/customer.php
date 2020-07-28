@@ -29,18 +29,18 @@
 
 
             if(empty($customerName) || empty($customerEmail) || empty($customerPhone) || empty($password)){
-                $alert= "<span class='error' style='color:red;font-size:23px;' > Must be not empty</span>";
+                $alert= "<span class='error' style='color:red;font-size:23px;' >Xin điền đầy đủ thông tin</span>";
                 return $alert;
             }
             else{
                 $query ="INSERT INTO tbl_customer(customerName,customerEmail,customerPhone,password) VALUES('$customerName','$customerEmail','$customerPhone','$password')"; 
                 $result = $this->db->insert($query);
                 if($result){
-                    $alert="<span class ='success' style='color:green;font-size:23px;'>Create account completion</span>";
+                    $alert="<span class ='success' style='color:green;font-size:23px;'>Tạo tài khoản mới thành công</span>";
                     return $alert;
                 }
                 else{
-                    $alert="<span style='color:red;font-size:23px;' class ='error'> Create account not completion</span>";
+                    $alert="<span style='color:red;font-size:23px;' class ='error'>Không tạo được tài khoản mới!</span>";
                     return $alert;
                 }
             }
@@ -50,7 +50,7 @@
             $password = mysqli_real_escape_string($this->db->link, md5($data['password']));
 
             if(empty($customerName) || empty($password)){
-                $alert= "<span  style='color:red;font-size:23px;' > Must be not empty</span>";
+                $alert= "<span  style='color:red;font-size:23px;' >Xin điền đầy đủ thông tin</span>";
                 return $alert;
             }
             else{
@@ -63,7 +63,7 @@
                       Session::set('customer_name',$value['customerName']);
                       header('Location:index.php');
                  }else{
-                     $alert= "<span style='color:red;font-size:23px;' > Name and password not match</span>";
+                     $alert= "<span style='color:red;font-size:23px;' >Thông tin đăng nhập không khớp với nhau!</span>";
                      return $alert;
                  }
             }
@@ -79,18 +79,18 @@
             $customerEmail = mysqli_real_escape_string($this->db->link, $data['customerEmail']);
             $customerPhone = mysqli_real_escape_string($this->db->link, $data['customerPhone']);            
             if(empty($customerName) || empty($customerEmail) || empty($customerPhone)){
-                $alert= "<span style='color:red;font-size:23px;'> Must be not empty</span>";
+                $alert= "<span style='color:red;font-size:23px;'>Xin điền đầy đủ thông tin</span>";
                 return $alert;
             }
             else{                 
                     $query ="UPDATE tbl_customer  SET customerName ='$customerName',customerEmail='$customerEmail',customerPhone='$customerPhone' WHERE customerID = '$id' ";
                     $result = $this->db->update($query);
                     if($result){
-                         $alert="<span style='color:green;font-size:23px;margin:2% 35%;'> Update completion</span>";
+                         $alert="<span style='color:green;font-size:23px;margin:2% 35%;'>Cập nhật thành công</span>";
                          return $alert;
                     }
                     else{
-                         $alert="<span style='color:red;font-size:23px;margin:2% 35%;'> Update not completion</span>";
+                         $alert="<span style='color:red;font-size:23px;margin:2% 35%;'>Cập nhật thất bại</span>";
                          return $alert;
                     }
             }

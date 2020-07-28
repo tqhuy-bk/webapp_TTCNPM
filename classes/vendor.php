@@ -28,18 +28,18 @@
             //lấy vendorName gán vào link trong class database
 
             if(empty($vendorName)){
-            	$alert= "<span class='error' > Must be not empty</span>";
+            	$alert= "<span class='error' >Xin điền đầy đủ thông tin</span>";
             	return $alert;
             }
             else{
             	$query ="INSERT INTO tbl_vendor(vendorName) VALUES('$vendorName')"; 
             	$result = $this->db->insert($query);
                 if($result){
-                    $alert="<span class ='success'> Add vendor completion</span>";
+                    $alert="<span class ='success'>Thêm nhà cung cấp mới thành công</span>";
                     return $alert;
                 }
                 else{
-                    $alert="<span class ='error'> Add vendor not completion</span>";
+                    $alert="<span class ='error'>Thêm nhà cung cấp mới thất bại</span>";
                     return $alert;
                 }
             }
@@ -64,18 +64,18 @@
             $id = mysqli_real_escape_string($this->db->link, $id);
 
             if(empty($vendorName)){
-                $alert= "<span class='error' > Must be not empty</span>";
+                $alert= "<span class='error' >Xin điền đầy đủ thông tin</span>";
                 return $alert;
             }
             else{
                 $query ="UPDATE tbl_vendor  SET vendorName ='$vendorName' WHERE vendorID = '$id'"; 
                 $result = $this->db->update($query);
                 if($result){
-                    $alert="<span class ='success'> Update vendor completion</span>";
+                    $alert="<span class ='success'>Cập nhật thành công</span>";
                     return $alert;
                 }
                 else{
-                    $alert="<span class ='error'> Update vendor not completion</span>";
+                    $alert="<span class ='error'>Cập nhật thất bại</span>";
                     return $alert;
                 }
             }
@@ -85,11 +85,11 @@
             //chọn phần tử trong bảng với đk vendorID= id 
             $result = $this->db->delete($query);
             if($result){
-                $alert= "<span class='success' > Delete completion</span>";
+                $alert= "<span class='success' >Xóa thành công</span>";
                 return $alert;
             }
             else{
-                $alert= "<span class='error' > Dalete not completion</span>";
+                $alert= "<span class='error' >Xóa không thành công</span>";
                 return $alert;
             }
         }
