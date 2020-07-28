@@ -8,7 +8,7 @@
     <div class="content">
     	<div class="content_top">
     		<div class="heading">
-    		<p style="font-size:20px;color:">Search  results  for  '<?php echo $search ?>': </p>
+    		<p style="font-size:20px;color:">Kết quả tìm kiếm cho '<?php echo $search ?>': </p>
     		</div>
     		<div class="clear"></div>
     	</div>
@@ -23,7 +23,7 @@
 					 <h2><?php echo $result['productName'] ?></h2>
 					 <p><?php echo $fm->textShorten($result['description'],30) ?></p>
 					 <p><span class="price"><?php echo $result['price'] ?>VND</span></p>
-				     <div class="button"><span><a href="details.php?productid=<?php echo $result['productID'] ?>" class="details">Details</a></span></div>
+				     <div class="button"><span><a href="details.php?productid=<?php echo $result['productID'] ?>" class="details">Xem thêm</a></span></div>
 				</div>
 				<?php 
 					  }

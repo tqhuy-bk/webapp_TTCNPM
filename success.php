@@ -6,7 +6,7 @@ include 'inc/header.php' ?>
 	<div class="section group">
 
 	     <p style=" color:green; margin:30px 30% ;font-size:40px;">Thanh toán thành công</p>
-		<p> Đơn hàng của bạn: <a href="orderdetail.php">click here</a></p>
+		<p> Đơn hàng của bạn: <a href="orderdetail.php">nhấn vào đây</a></p>
           
 	</div>
 				

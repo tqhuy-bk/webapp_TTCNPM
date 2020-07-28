@@ -69,7 +69,7 @@ p {
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>Order</h2>
+			    	<h2>Đơn hàng</h2>
 			    	<div class="kHWfJY">
 			    		<?php 
 			    		   $show_info = $customer->get_info();
@@ -95,13 +95,13 @@ p {
 					</div>
 					<table class="tblone">
 							<tr>
-								<th width="20%">Product Name</th>
-								<th width="10%">Image</th>
-								<th width="15%">Price</th>
-								<th width="20%">Quantity</th>
-								<th width="20%">Total Price</th>
-								<th  width="20%">Date Order</th>
-								<th width="10%">State</th>
+								<th width="20%">Tên mặt hàng</th>
+								<th width="10%">Hình ảnh</th>
+								<th width="15%">Giá tiền</th>
+								<th width="20%">Số lượng</th>
+								<th width="20%">Thành tiền</th>
+								<th  width="20%">Ngày đặt hàng</th>
+								<th width="10%">Trạng thái</th>
 							</tr>
 						    <?php 
 						        $show_order= $order->show_order_details($date_order);
@@ -121,7 +121,7 @@ p {
 								?>
 								<td><?php echo  $fm->format_money($total_price)?></td>
 								<td><?php echo $result['date_order'] ?></td>
-								<td><a href="">Processing</a></td>
+								<td><a href="">Đang thực hiện</a></td>
 							</tr>
                              <?php 
                                 }
@@ -131,8 +131,8 @@ p {
 						<table style="float:right;text-align:left;" width="40%">
 							<br>
 							<tr>
-								<th style=" color:red;font-size:30px;">Total : </th>
-								<td style=" color:red;font-size:20px;"><?php echo  $fm->format_money($sum_price)  ?> VND</td>
+								<th style=" color:red;font-size:30px;">Tổng cộng: </th>
+								<td style=" color:red;font-size:20px;"><?php echo  $fm->format_money($sum_price)  ?> đồng</td>
 							</tr>
 							
 					   </table>

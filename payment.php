@@ -245,7 +245,7 @@ i {
                                    $sum_price += $total_price;
                                    Session::set('sum',$sum_price);
                                 ?>
-                                <div class="price"><?php echo  $fm->format_money($total_price) ?> vnđ</div>
+                                <div class="price"><?php echo  $fm->format_money($total_price) ?> đồng</div>
                             </div>
                             <?php 
                                 }}
@@ -254,7 +254,7 @@ i {
                         <div class="price-summary">
                             <div class="total">
                                 <div class="name">Thành tiền:</div>
-                                <div class="value"><?php echo  $fm->format_money($sum_price)?> vnđ<i>(Đã bao gồm VAT nếu có)</i></div>
+                                <div class="value"><?php echo  $fm->format_money($sum_price)?> đồng<i>(Đã bao gồm VAT nếu có)</i></div>
                             </div>
                         </div>
                     </div>

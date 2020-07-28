@@ -19,7 +19,7 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>Your Cart</h2>
+			    	<h2>Giỏ hàng</h2>
 			    	<?php  
 			    	    if(isset($check_update_quantity)){
 			    	    	echo $check_update_quantity;
@@ -32,12 +32,12 @@
 			    	 ?>
 						<table class="tblone">
 							<tr>
-								<th width="20%">Product Name</th>
-								<th width="10%">Image</th>
-								<th width="15%">Price</th>
-								<th width="25%">Quantity</th>
-								<th width="20%">Total Price</th>
-								<th width="10%">Action</th>
+								<th width="20%">Tên mặt hàng</th>
+								<th width="10%">Hình ảnh</th>
+								<th width="15%">Giá tiền</th>
+								<th width="25%">Số lượng</th>
+								<th width="20%">Thành tiền</th>
+								<th width="10%">Thao tác</th>
 							</tr>
 						    <?php 
 						        $show_cart= $cart->show_cart();
@@ -53,7 +53,7 @@
 									<form action="" method="post">
 										<input type="hidden" name="cartID" value="<?php echo $result['cartID'] ?>"/>
 										<input type="number" name="quantity" min="1" value="<?php echo $result['quantity'] ?>"/>
-										<input type="submit" name="submit" value="Update"/>
+										<input type="submit" name="submit" value="Cập nhật"/>
 									</form>
 								</td>
 								<?php 
@@ -62,7 +62,7 @@
 								   Session::set('sum',$sum_price);
 								?>
 								<td><?php echo  $fm->format_money($total_price)?></td>
-								<td><a href="?delete_product_id=<?php echo $result['productID'] ?>">Delete</a></td>
+								<td><a href="?delete_product_id=<?php echo $result['productID'] ?>">Xóa</a></td>
 							</tr>
                              <?php 
                                 }
@@ -72,8 +72,8 @@
 						<table style="float:right;text-align:left;" width="40%">
 							<br>
 							<tr>
-								<th style=" color:red;font-size:30px;">Total : </th>
-								<td style=" color:red;font-size:20px;"><?php echo  $fm->format_money($sum_price)  ?> VND</td>
+								<th style=" color:red;font-size:30px;">Tổng cộng: </th>
+								<td style=" color:red;font-size:20px;"><?php echo  $fm->format_money($sum_price)  ?> đồng</td>
 							</tr>
 							
 					   </table>
