@@ -66,16 +66,16 @@
  </style>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>New Order</h2>
+                <h2>Đơn hàng mới</h2>
                 <div class="inner">
 						<table class="table">
 							<thead class="thread">
 								<tr class="tr">
-									<th class="th">Order ID</th>
-									<th class="th">Date Order</th>
-									<th class="th">Products</th>
-									<th class="th">Total Price</th>
-									<th class="th">State</th>
+									<th class="th">ID đơn hàng</th>
+									<th class="th">Ngày đặt hàng</th>
+									<th class="th">Mặt hàng</th>
+									<th class="th">Thành tiền</th>
+									<th class="th">Trạng thái</th>
 								</tr>
 							</thead>
 							<tbody class="tbody">

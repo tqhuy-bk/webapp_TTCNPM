@@ -31,7 +31,7 @@
             $adminPass = mysqli_real_escape_string($this->db->link, $adminPass);
 
             if(empty($adminUser) || empty($adminPass)){
-            	$alert= " must be not empty";
+            	$alert= "Xin điền đầy đủ thông tin";
             	return $alert;
             }
             else{
@@ -47,7 +47,7 @@
 
             	}
             	else{
-            		$alert=" not Completion";
+            		$alert="Chưa có tài khoản/Thông tin đã nhập không đúng";
             		return $alert;
             	}
             }
@@ -64,18 +64,18 @@
             $adminUser = mysqli_real_escape_string($this->db->link, $data['adminUser']); 
             $role = mysqli_real_escape_string($this->db->link, $data['role']);          
             if(empty($adminName) || empty($adminEmail) || empty($adminPhone)){
-                $alert= "<span style='color:red;font-size:16px;'> Must be not empty</span>";
+                $alert= "<span style='color:red;font-size:16px;'>Xin điền đầy đủ thông tin</span>";
                 return $alert;
             }
             else{                 
                     $query ="UPDATE tbl_admin  SET adminName ='$adminName',adminEmail='$adminEmail',adminUser='$adminUser' WHERE adminID = '$id' ";
                     $result = $this->db->update($query);
                     if($result){
-                         $alert="<span style='color:green;font-size:16px;margin:2% 20%;'> Update completion</span>";
+                         $alert="<span style='color:green;font-size:16px;margin:2% 20%;'>Cập nhật thành công</span>";
                          return $alert;
                     }
                     else{
-                         $alert="<span style='color:red;font-size:16px;margin:2% 35%;'> Update not completion</span>";
+                         $alert="<span style='color:red;font-size:16px;margin:2% 35%;'>Cập nhật thất bại</span>";
                          return $alert;
                     }
             }

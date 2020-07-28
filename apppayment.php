@@ -24,7 +24,7 @@ include 'inc/header.php' ?>
        <div class="section group">
           <div class="box_left">
               <div class="cartpage">
-              <h2>Your Cart</h2>
+              <h2>Giỏ hàng</h2>
               <?php  
                  if(isset($check_update_quantity)){
                    echo $check_update_quantity;
@@ -37,10 +37,10 @@ include 'inc/header.php' ?>
               ?>
               <table class="tblone">
               <tr>
-                <th width="20%">Product Name</th>
-                <th width="15%">Price</th>
-                <th width="25%">Quantity</th>
-                <th width="20%">Total Price</th>
+                <th width="20%">Tên mặt hàng</th>
+                <th width="15%">Giá tiền</th>
+                <th width="25%">Số lượng</th>
+                <th width="20%">Thành tiền</th>
               </tr>
                 <?php 
                     $show_cart= $cart->show_cart();
@@ -70,8 +70,8 @@ include 'inc/header.php' ?>
             <table style="float:right;text-align:left;" width="40%">
               <br>
               <tr>
-                <th style=" color:red;font-size:30px;">Total : </th>
-                <td style=" color:red;font-size:20px;"><?php echo $sum_price  ?> VND</td>
+                <th style=" color:red;font-size:30px;">Tổng cộng: </th>
+                <td style=" color:red;font-size:20px;"><?php echo $sum_price  ?> đồng</td>
               </tr>
               
              </table>
@@ -79,7 +79,7 @@ include 'inc/header.php' ?>
           </div>
           <div class="box_right">
               <div class="cartpage">
-              <h2>Infomation</h2>
+              <h2>Thông tin</h2>
                <?php 
                   $check_get_info_customer=$customer->get_info();
                  if($check_get_info_customer){
@@ -115,13 +115,13 @@ include 'inc/header.php' ?>
                    Session::set('sum',$sum_price);
                 ?>
         <br><br><br>
-          <p>Tổng tiền thanh toán: <?php echo $sum_price ?> <p> 
+          <p>Tổng tiền thanh toán: <?php echo $sum_price ?> đồng<p> 
             <br>
             <?php  
             $get_info= $customer->get_info();
                   if($get_info){
             $result=$get_info->fetch_assoc();} ?>
-            <p> Số tiền hiện có trong tài khoản: <?php echo $result['balance']  ?> VND</p>           
+            <p>Số tiền hiện có trong tài khoản: <?php echo $result['balance']  ?> đồng</p>           
             <?php
           if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
               $id=Session::get('customer_id');
@@ -135,7 +135,7 @@ include 'inc/header.php' ?>
            }
           
           ?>       
-          <p>Bạn có muốn thanh toán bằng ứng dụng? <p> <br>
+          <p>Bạn có muốn thanh toán bằng ứng dụng?<p> <br>
             <form action="" method="POST">
           <div><input style="background: #0c5a6c;float:left; margin-right:40px;" class="buysubmit" type ="submit" name="submit" value="Thanh toán ngay" class="grey"></div></form>
           <div >

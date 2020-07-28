@@ -6,7 +6,7 @@
     <div class="content">
     	<div class="content_top">
     		<div class="heading">
-    		<h3>Foods</h3>
+    		<h3>Món ăn</h3>
     		</div>
     		<div class="clear"></div>
     	</div>

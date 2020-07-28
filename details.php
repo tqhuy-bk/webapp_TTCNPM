@@ -33,16 +33,16 @@
 					<h2><?php echo $result['productName'] ?></h2>
 					<p><?php echo  $result['description'] ?></p>					
 					<div class="price">
-						<p>Price: <span><?php echo  $fm->format_money($result['price']) ?> vnđ</span></p>
-						<p>Category: <span><?php echo $result['catName'] ?> </span></p>
-						<p>Vendor: <span><?php echo $result['catName'] ?> </span> </p>
+						<p>Giá tiền: <span><?php echo  $fm->format_money($result['price']) ?> vnđ</span></p>
+						<p>Loại: <span><?php echo $result['catName'] ?> </span></p>
+						<p>Quản lý bởi: <span><?php echo $result['catName'] ?> </span> </p>
 					</div>
 				<div class="add-cart">
 					<table>
 						<button type="text" onclick="if (count.value != 0) count.value--" id="remove">-</button>
 						<form method="post" action="">
 							<input type="text" id="count" class="buyfield" name="quantity" value="1"/>
-							<td><input type="submit" class="buysubmit" name="submit" value="Add to cart"/></td>
+							<td><input type="submit" class="buysubmit" name="submit" value="Thêm vào giỏ hàng"/></td>
 						</form>
 						<button type="none-submit" onclick="count.value++" id="add">+</button>
 					</table>
@@ -55,7 +55,7 @@
 				</div>
 			</div>
 			<div class="product-desc">
-			<h2 style="background: #0c5a6c;">Product Details</h2>
+			<h2 style="background: #0c5a6c;">Chi tiết</h2>
 			<p><?php echo $result['description'] ?></p>
 	        </div>
 				
@@ -65,19 +65,19 @@
 	       } 
 	     ?>
 				<div class="rightsidebar span_3_of_1">
-					<h2>CATEGORIES</h2>
+					<h2>DANH MỤC SẢN PHẨM</h2>
 					<ul>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
     				</ul>
     	
  				</div>

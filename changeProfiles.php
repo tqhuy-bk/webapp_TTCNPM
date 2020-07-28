@@ -28,7 +28,7 @@ include 'inc/header.php' ?>
         <form action="" method="post">
                
                 <div style="margin:2% 20%;">
-                    <label  style="font-size:25px;margin-right: 20%;float:left;">Name:</label>
+                    <label  style="font-size:25px;margin-right: 20%;float:left;">Tên:</label>
                     <input style="width:200px;height:30px;" type="text" name="customerName" value="<?php echo $result['customerName'] ?>"  />
                 </div>
                 <div style="font-size:25px;margin:2% 21%;">
@@ -36,7 +36,7 @@ include 'inc/header.php' ?>
                     <input style="width:200px;height:30px;" type="text" name="customerEmail" value="<?php echo $result['customerEmail'] ?>"  />
                 </div>
                 <div style="font-size:25px;margin:2% 20%;">
-                    <label  style="margin-right: 20%;float:left">Phone:</label>
+                    <label  style="margin-right: 20%;float:left">Số điện thoại:</label>
                     <input style="width:200px;height:30px;" type="text" name="customerPhone" value="<?php echo $result['customerPhone'] ?>" />
                 </div>
                 <?php  
@@ -44,7 +44,7 @@ include 'inc/header.php' ?>
                             echo $check_update_info;
                         }
                 ?>
-                <div style="margin:2% 40%;"> <input style="background: #0c5a6c; color:white;width:100px;height:30px;" type="submit" name="submit" Value="Update" /> </div>    
+                <div style="margin:2% 40%;"> <input style="background: #0c5a6c; color:white;width:100px;height:30px;" type="submit" name="submit" Value="Cập nhật" /> </div>    
             </form>
         </div>
     </div> 

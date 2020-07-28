@@ -20,20 +20,20 @@
 <div class="container">
 	<section id="content">
 		<form action="login.php" method="post">
-			<h1>Admin Login</h1>
+			<h1>Đăng nhập (Quản trị viên)</h1>
 			<span><?php 
 			   if(isset($login_check)){
 			   	echo $login_check;
 			   }
 			 ?></span>
 			<div>
-				<input type="text" placeholder="Username" required="" name="adminUser"/>
+				<input type="text" placeholder="Tên đăng nhập" required="" name="adminUser"/>
 			</div>
 			<div>
-				<input type="password" placeholder="Password" required="" name="adminPass"/>
+				<input type="password" placeholder="Mật khẩu" required="" name="adminPass"/>
 			</div>
 			<div>
-				<input type="submit" value="Log in" />
+				<input type="submit" value="Đăng nhập" />
 			</div>
 		</form><!-- form -->
 		<div class="button">

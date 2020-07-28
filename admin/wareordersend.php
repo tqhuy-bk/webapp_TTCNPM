@@ -25,31 +25,31 @@
                
                 <tr>
                     <td>
-                        <label>Name</label>
+                        <label>Tên</label>
                     </td>
                     <td>
-                        <input type="text" name="productName" placeholder="Enter Product Name..." class="medium" />
+                        <input type="text" name="productName" placeholder="Nhập tên hàng..." class="medium" />
                     </td>
                 </tr>
 				        <tr>
                     <td>
-                        <label>Amount</label>
+                        <label>Số lượng</label>
                     </td>
                     <td>
-                        <input type="text" name="amount" placeholder="Enter Amount..." class="medium" />
+                        <input type="text" name="amount" placeholder="Nhập số lượng..." class="medium" />
                     </td>
                 </tr>
                  <tr>
                     <td>
-                        <label>ID của vendor quản lý kho cần lấy hàng</label>
+                        <label>ID của người quản lý kho cần lấy hàng</label>
                     </td>
                     <td>
-                        <input type="text" name="vendorid" placeholder="Enter ID..." class="medium" />
+                        <input type="text" name="vendorid" placeholder="Nhập ID..." class="medium" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>Description</label>
+                        <label>Mô tả</label>
                     </td>
                     <td>
                         <textarea name="description" ></textarea>
@@ -58,7 +58,7 @@
 				        <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Send" />
+                        <input type="submit" name="submit" Value="Gửi" />
                     </td>
                 </tr>
             </table>
@@ -69,12 +69,12 @@
             <table class="data display " id="example">
             <thead>
                 <tr>
-                    <th>Serial No.</th>
-                    <th>Product Name</th>
-                    <th>Amount</th>
-          <th>Description</th>
+                    <th>Số thứ tự</th>
+                    <th>Tên hàng</th>
+                    <th>Số lượng</th>
+          <th>Mô tả</th>
           <th>Người yêu cầu</th>
-          <th>Status</th>
+          <th>Trạng thái</th>
                 </tr>
             </thead>
             <tbody>

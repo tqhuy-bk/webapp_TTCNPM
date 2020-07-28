@@ -15,7 +15,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Post List</h2>
+        <h2>Danh sách mặt hàng</h2>
         <?php 
              if(isset($delete)==true){
                   	echo $delete;
@@ -25,17 +25,17 @@
             <table class="data display " id="example">
 			<thead>
 				<tr>
-					<th>Serial No.</th>
-					<th>Product Name</th>
-					<th>Price</th>
-					<th>Product Image</th>
-					<th>Description</th>
-				  <th>Category</th>
-				  <th>Vendor</th>
-          <th>Type</th>
+					<th>Số thứ tự</th>
+					<th>Tên mặt hàng</th>
+					<th>Giá tiền</th>
+					<th>Hình ảnh</th>
+					<th>Mô tả</th>
+				  <th>Danh mục</th>
+				  <th>Nhà cung cấp</th>
+          <th>Loại</th>
           <?php $level=Session::get('level');?>
           <?php if($level==3){ ?>
-          <th>Action</th>>
+          <th>Thao tác</th>>
            <?php
               }
               ?> 
@@ -74,7 +74,7 @@
           <td class="center"> <?php echo $result['type'] ?></td>
           <?php $level=Session::get('level');?>
           <?php if($level==3){ ?>
-					<td><a href="product_edit.php?productid=<?php echo $result['productID'] ?>">Edit</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Delete</a></td>
+					<td><a href="product_edit.php?productid=<?php echo $result['productID'] ?>">Chỉnh sửa</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Xóa</a></td>
 				   <?php
               }
               ?> 

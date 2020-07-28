@@ -21,7 +21,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Edit Product</h2>
+        <h2>Chỉnh sửa hàng trong kho</h2>
         <span> <?php 
                    if(isset($check_update_product)==true){
                       echo $check_update_product; 
@@ -41,7 +41,7 @@
                
                 <tr>
                     <td>
-                        <label>Name</label>
+                        <label>Tên</label>
                     </td>
                     <td>
                         <input type="text" name="productName" value="<?php echo $result_product['productName'] ?>" class="medium" />
@@ -49,7 +49,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Amount</label>
+                        <label>Số lượng</label>
                     </td>
                     <td>
                         <input type="text" name="amount" value="<?php echo $result_product['amount'] ?>" class="medium" />
@@ -59,7 +59,7 @@
         <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Update" />
+                        <input type="submit" name="submit" Value="Cập nhật" />
                     </td>
                 </tr>
             </table>

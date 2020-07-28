@@ -33,7 +33,7 @@
             
 
             if($productName=="" || $category=="" || $vendor=="" || $description=="" || $price=="" || $file_name=="" || $type==""){
-                $alert= "<span class='error' > Must be not empty</span>";
+                $alert= "<span class='error' >Xin điền đầy đủ thông tin</span>";
                 return $alert;
             }
             else{
@@ -41,11 +41,11 @@
                 $query ="INSERT INTO tbl_product(productName,categoryID,vendorID,description,price,type,image) VALUES('$productName','$category','$vendor','$description','$price','$type','$file_name')"; 
                 $result = $this->db->insert($query);
                 if($result){
-                    $alert="<span class ='success'> Insert product completion</span>";
+                    $alert="<span class ='success'>Thêm mặt hàng mới thành công</span>";
                     return $alert;
                 }
                 else{
-                    $alert="<span class ='error'> Insert product not completion</span>";
+                    $alert="<span class ='error'>Thêm mặt hàng mới thất bại</span>";
                     return $alert;
                 }
             }
@@ -83,7 +83,7 @@
             
 
             if(empty($productName) || empty($category) || empty($vendor) || empty($description) || empty($price)){
-                $alert= "<span class='error'> Must be not empty</span>";
+                $alert= "<span class='error'>Xin điền đầy đủ thông tin</span>";
                 return $alert;
             }
             else{ 
@@ -96,11 +96,11 @@
                 }
                  $result = $this->db->update($query);
                     if($result){
-                        $alert="<span class ='success'> Update prouct completion</span>";
+                        $alert="<span class ='success'>Cập nhật thành công</span>";
                          return $alert;
                     }
                     else{
-                         $alert="<span class ='error'> Update product not completion</span>";
+                         $alert="<span class ='error'>Cập nhật thất bại</span>";
                           return $alert;
                     }
             }
@@ -111,11 +111,11 @@
             //chọn phần tử trong bảng với đk productID= id 
             $result = $this->db->delete($query);
             if($result){
-                $alert= "<span class='success' > Delete completion</span>";
+                $alert= "<span class='success' >Xóa thành công</span>";
                 return $alert;
             }
             else{
-                $alert= "<span class='error' > Dalete not completion</span>";
+                $alert= "<span class='error' >Xóa không thành công</span>";
                 return $alert;
             }
         }

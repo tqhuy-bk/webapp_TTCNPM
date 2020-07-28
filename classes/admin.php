@@ -30,18 +30,18 @@
             $adminEmail = mysqli_real_escape_string($this->db->link, $data['adminEmail']);
             $adminUser = mysqli_real_escape_string($this->db->link, $data['adminUser']);           
             if(empty($adminName) || empty($adminEmail) || empty($adminUser)){
-                $alert= "<span style='color:red;font-size:16px;'> Must be not empty</span>";
+                $alert= "<span style='color:red;font-size:16px;'>Xin điền đầy đủ thông tin</span>";
                 return $alert;
             }
             else{                 
                     $query ="UPDATE tbl_admin  SET adminName ='$adminName',adminEmail='$adminEmail',adminUser='$adminUser' WHERE adminID = '$id' ";
                     $result = $this->db->update($query);
                     if($result){
-                         $alert="<span style='color:green;font-size:16px;margin:2% 20%;'> Update completion</span>";
+                         $alert="<span style='color:green;font-size:16px;margin:2% 20%;'>Cập nhật thành công</span>";
                          return $alert;
                     }
                     else{
-                         $alert="<span style='color:red;font-size:16px;margin:2% 35%;'> Update not completion</span>";
+                         $alert="<span style='color:red;font-size:16px;margin:2% 35%;'>Cập nhật thất bại</span>";
                          return $alert;
                     }
             }

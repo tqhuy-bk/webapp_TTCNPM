@@ -21,7 +21,7 @@
  ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Edit Category</h2>
+                <h2>Chỉnh sửa danh mục</h2>
                <span> <?php 
                    if(isset($check_update_cat)==true){
                       echo $check_update_cat; 
@@ -38,12 +38,12 @@
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name ="catName" value="<?php echo $result['catName'] ?>" placeholder="Edit Category Name..." class="medium" />
+                                <input type="text" name ="catName" value="<?php echo $result['catName'] ?>" placeholder="Chỉnh sửa tên danh mục..." class="medium" />
                             </td>
                         </tr>
 						             <tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Update" />
+                                <input type="submit" name="submit" Value="Cập nhật" />
                             </td>
                         </tr>
                     </table>

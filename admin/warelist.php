@@ -24,9 +24,9 @@
             <table class="data display " id="example">
 			<thead>
 				<tr>
-					<th>Serial No.</th>
-					<th>Product Name</th>
-					<th>Amount</th>
+					<th>Số thứ tụ</th>
+					<th>Tên hàng</th>
+					<th>Số lượng</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -45,7 +45,7 @@
 					<td><center><?php echo $i ?></center></td>
 					<td><?php echo $result['productName'] ?></td>
 					<td><center><?php echo $result['amount'] ?></center></td>
-					<td><a href="ware_edit.php?productid=<?php echo $result['productID'] ?>">Edit</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Delete</a></td>
+					<td><a href="ware_edit.php?productid=<?php echo $result['productID'] ?>">Chỉnh sửa</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Xóa</a></td>
 				</tr>
 				<?php 
 					 }

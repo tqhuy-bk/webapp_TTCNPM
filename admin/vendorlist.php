@@ -12,7 +12,7 @@
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Vendor List</h2>
+                <h2>Danh sách nhà cung cấp</h2>
                 <?php 
                   if(isset($delete_vendor)==true){
                   	echo $delete_vendor;
@@ -23,9 +23,9 @@
                     	<!-- class ="database" -->
 					<thead>
 						<tr>
-							<th>Serial No.</th>
-							<th>Vendor Name</th>
-							<th>Action</th>
+							<th>Số thứ tự</th>
+							<th>Tên nhà cung cấp</th>
+							<th>Thao tác</th>
 						</tr>
 					</thead>
 					<tbody  >
@@ -38,10 +38,10 @@
 						   //result trả về một cấu trúc gồm id và name
 						 ?>
 						<tr class="even gradeC">
-							<td><?php  echo $i ?></td>
-							<td><?php echo $result['vendorName'] ?> </td> 
+							<td><center><?php  echo $i ?></center></td>
+							<td><center><?php echo $result['vendorName'] ?> </center></td> 
 							<!-- echo là in ra catName -->
-							<td><a href="vendor_edit.php?vendorid=<?php echo $result['vendorID'] ?>">Edit</a> || <a href="?deleteid=<?php echo $result['vendorID'] ?>">Delete</a></td>
+							<td><center><a href="vendor_edit.php?vendorid=<?php echo $result['vendorID'] ?>">Chỉnh sửa</a> || <a href="?deleteid=<?php echo $result['vendorID'] ?>">Xóa</a></center></td>
 						</tr>
 					  <?php 
 					     }
