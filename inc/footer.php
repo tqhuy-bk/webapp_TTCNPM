@@ -3,43 +3,43 @@
    	  <div class="wrapper">	
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
-						<h4>Information</h4>
+						<h4>Thông tin</h4>
 						<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Customer Service</a></li>
-						<li><a href="#"><span>Advanced Search</span></a></li>
-						<li><a href="#">Orders and Returns</a></li>
-						<li><a href="#"><span>Contact Us</span></a></li>
+						<li><a href="#">Giói thiệu</a></li>
+						<li><a href="#">Chăm sóc khách hàng</a></li>
+						<li><a href="#"><span>Tìm kiếm nâng cao</span></a></li>
+						<li><a href="#">Đặt hàng và trả hàng</a></li>
+						<li><a href="#"><span>Liên hệ</span></a></li>
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Why buy from us</h4>
+					<h4>Tại sao lại chọn chúng tôi</h4>
 						<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Customer Service</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#"><span>Site Map</span></a></li>
-						<li><a href="#"><span>Search Terms</span></a></li>
+						<li><a href="#">Giới thiệu</a></li>
+						<li><a href="#">Chăm sóc khách hàng</a></li>
+						<li><a href="#">Chính sách riêng tư</a></li>
+						<li><a href="#"><span>Sơ đồ trang</span></a></li>
+						<li><a href="#"><span>Từ khóa tìm kiếm</span></a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>My account</h4>
+					<h4>Tài khoản của tôi</h4>
 						<ul>
-							<li><a href="login.php">Sign In</a></li>
-							<li><a href="cart.php">View Cart</a></li>
-							<li><a href="#">My Wishlist</a></li>
-							<li><a href="#">Track My Order</a></li>
-							<li><a href="#">Help</a></li>
+							<li><a href="login.php">Đăng nhập</a></li>
+							<li><a href="cart.php">Xem giỏ hàng</a></li>
+							<li><a href="#">Danh sách mặt hàng yêu thích</a></li>
+							<li><a href="#">Xem tình trạng đơn hàng</a></li>
+							<li><a href="#">Trợ giúp</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Contact</h4>
+					<h4>Liên hệ</h4>
 						<ul>
 							<li><span>+88-01713458599</span></li>
 							<li><span>+88-01813458552</span></li>
 						</ul>
 						<div class="social-icons">
-							<h4>Follow Us</h4>
+							<h4>Theo dõi chúng tôi tại</h4>
 					   		  <ul>
 							      <li class="facebook"><a href="#" target="_blank"> </a></li>
 							      <li class="twitter"><a href="#" target="_blank"> </a></li>
@@ -51,7 +51,7 @@
 				</div>
 			</div>
 			<div class="copy_right">
-				<p>Training with live project &amp; All rights Reseverd </p>
+				<p>Bản quyền thuộc về đơn vị cung cấp</p>
 		   </div>
      </div>
     </div>
