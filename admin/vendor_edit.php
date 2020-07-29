@@ -21,7 +21,7 @@
  ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Tùy chỉnh nhà cung cấp</h2>
+                <h2>Edit Vendor</h2>
                <span> <?php 
                    if(isset($check_update_vendor)==true){
                       echo $check_update_vendor; 
@@ -38,12 +38,12 @@
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name ="vendorName" value="<?php echo $result['vendorName'] ?>" placeholder="Chỉnh sửa tên nhà cung cấp..." class="medium" />
+                                <input type="text" name ="vendorName" value="<?php echo $result['vendorName'] ?>" placeholder="Edit Vendor Name..." class="medium" />
                             </td>
                         </tr>
 						             <tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Cập nhật..." />
+                                <input type="submit" name="submit" Value="Update" />
                             </td>
                         </tr>
                     </table>
