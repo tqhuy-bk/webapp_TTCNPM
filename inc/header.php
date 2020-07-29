@@ -60,14 +60,14 @@
 									   $check_empty_cart= $cart->empty_cart();
 									   if($check_empty_cart){
 									   	  $check_sum= Session::get('sum');
-                                       	     echo $check_sum;
+                                       	     echo $fm->format_money($check_sum);
 									   }
 									   else{
 									   	echo '0';
 									   }
 									   
 									 ?>
-									 đồng
+									 VND
 								</span>
 							</a>
 						</div>
@@ -75,30 +75,30 @@
 			      <?php 
 		   	           $check_login = Session::get('customer_login');
 		   	           if($check_login){
-		   	 	         echo '<a href="profile.php" class="login" style="margin-left:10px;background:#6492d6;width:170px;font-size:20px">Tài khoản</a>';
+		   	 	         echo '<a href="profile.php" class="login" style="margin-left:10px;background:#6492d6;width:170px;">My account</a>';
 		   	       }
 		   	       ?>
-			      <div><a href="admin/login.php" class="login" style="margin-left:10px;background:#6492d6;width:250px;font-size:20px">Đăng nhập (Quản trị viên)</a> </div>
+			      <div><a href="admin/login.php" class="login" style="margin-left:10px;background:#6492d6;width:170px;">Login Admin</a> </div>
 			      <?php 
 			          if(isset($_GET['customerid'])){ 
 			          	Session::destroy(); // nếu tồi tại customerid thì đăng xuất hủy phiên làm việc (khi đăng nhập) quay về lại ban đầu login.php
 			          }
 			       ?>
-		   <div class="login" style="background:#6492d6;font-size:20px;width:180px">
+		   <div class="login" style="background:#6492d6;">
 		   	<?php 
 		   	  $check_login = Session::get('customer_login');
 		   	 if($check_login==false){
-		   	 	echo '<a href="login.php">Đăng nhập (Khách)</a>';
+		   	 	echo '<a href="login.php">Login</a>';
 		   	 }
 		   	 else{
-                 echo  '<a href="?customerid='.Session::get('customer_id').'">Đăng xuất</a>';//lấy customer_id gán vào customerid
+                 echo  '<a href="?customerid='.Session::get('customer_id').'">Logout</a>';//lấy customer_id gán vào customerid
 		   	 }
 		   	 ?> 
 		   </div>
 		   <br>
 		   <br>
 		   <br>
-		   <div class="search_box" >
+		    <div class="search_box" >
 			<form>
 				<input type="text" name="search" value="Tìm kiếm mặt hàng..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" name="ok" value="Tìm kiếm">
 			</form>
@@ -130,13 +130,11 @@
 <div class="menu">
 	
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
-	  <li><a href="index.php">Trang chủ</a></li>
+	   <li><a href="index.php">Trang chủ</a></li>
 	  <li><a href="foods.php">Món ăn</a> </li>
 	  <li><a href="drinks.php">Đồ uống</a></li>
 	  <li><a href="cart.php">Giỏ hàng</a></li>
 	  <li><a href="contact.php">Liên hệ</a> </li>
-	  
-
 	  <div class="clear"></div>
 	</ul>
 </div>
