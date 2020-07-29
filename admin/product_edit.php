@@ -2,7 +2,6 @@
 <?php  include 'inc/sidebar.php';?>
 <?php 
    include '../classes/category.php';
-  // include 'vendor'
  ?>
 <?php 
      include '../classes/product.php';
@@ -10,22 +9,22 @@
 <?php 
    $product = new product();
    
-   if(!isset($_GET['productid']) || $_GET['productid'] ==NULL){
+   if(!isset($_GET['productid']) || $_GET['productid'] == NULL){
      echo  "<script> window.location='productlist.php' </script>";
    }
    else{
     $id = $_GET['productid'];
    }
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
       $check_update_product= $product->update_product($_POST,$_FILES, $id);
-   }
+  }
      
    
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Chỉnh sửa mặt hàng</h2>
+        <h2>Edit Product</h2>
         <span> <?php 
                    if(isset($check_update_product)==true){
                       echo $check_update_product; 
@@ -45,7 +44,7 @@
                
                 <tr>
                     <td>
-                        <label>Tên</label>
+                        <label>Name</label>
                     </td>
                     <td>
                         <input type="text" name="productName" value="<?php echo $result_product['productName'] ?>" class="medium" />
@@ -53,7 +52,7 @@
                 </tr>
         <tr>
                     <td>
-                        <label>Danh mục</label>
+                        <label>Category</label>
                     </td>
                     <td>
                         <select id="select" value name="category">
@@ -78,7 +77,7 @@
                 </tr>
         <tr>
                     <td>
-                        <label>Nhà cung cấp</label>
+                        <label>Vendor</label>
                     </td>
                     <td>
                         <select id="select" name="vendor">
@@ -103,7 +102,7 @@
         
                 <tr>
                     <td style="vertical-align: top; padding-top: 9px;">
-                        <label>Mô tả mặt hàng</label>
+                        <label>Description</label>
                     </td>
                     <td>
                         <textarea name="description" value="<?php echo $result_product['description'] ?>"></textarea>
@@ -111,7 +110,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Giá tiền</label>
+                        <label>Price</label>
                     </td>
                     <td>
                         <input type="text" name="price" value="<?php echo $result_product['price'] ?>" class="medium" />
@@ -119,20 +118,20 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Loại</label>
+                        <label>Type</label>
                     </td>
                     <td>
                         <select id="select" name="type">
                             <option value="combo">combo</option>
-                            <option value="discount">giảm giá</option>
-                            <option value="drinks">đồ uống</option>
-                            <option value="foods">món ăn</option>
+                            <option value="discount">discount</option>
+                            <option value="drinks">drinks</option>
+                            <option value="foods">foods</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>Tải lên hình ảnh</label>
+                        <label>Upload Image</label>
                     </td>
                     <td>
                       <?php  
@@ -146,7 +145,7 @@
         <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Cập nhật" />
+                        <input type="submit" name="submit" Value="Update" />
                     </td>
                 </tr>
             </table>
