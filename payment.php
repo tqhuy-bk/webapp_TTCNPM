@@ -245,7 +245,7 @@ i {
                                    $sum_price += $total_price;
                                    Session::set('sum',$sum_price);
                                 ?>
-                                <div class="price"><?php echo  $fm->format_money($total_price) ?> đồng</div>
+                                <div class="price"><?php echo  $fm->format_money($total_price) ?> vnđ</div>
                             </div>
                             <?php 
                                 }}
@@ -254,28 +254,27 @@ i {
                         <div class="price-summary">
                             <div class="total">
                                 <div class="name">Thành tiền:</div>
-                                <div class="value"><?php echo  $fm->format_money($sum_price)?> đồng<i>(Đã bao gồm VAT nếu có)</i></div>
+                                <div class="value"><?php echo  $fm->format_money($sum_price)?> vnđ<i>(Đã bao gồm VAT nếu có)</i></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <br>
-             <?php
+                <?php
                   if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                       $id=Session::get('customer_id');
                       $compare=$customer->compare($sum_price,$id);
                       if($compare==true){
-                        $add_order= $order->add_order($id);
+                        $add_order= $order->add_order_unpaid($id);
                         $remove = $cart->delete_cart();
                         echo  "<script> window.location='success.php' </script>";
                       }
                    }
                 ?>  
-            <p style="margin-left:30px;" > Chọn phương thức thanh toán</p>
+            <p style="margin-left:40px;" > Chọn phương thức thanh toán:</p>
              <br><br>
-                <div ><a style="background: #0c5a6c;float:left; margin-right:40px; margin-left:30px; " class="buysubmit" href="bankpayment.php">Thẻ ngân hàng</a></div>
-                <div ><a style="background: #0c5a6c;float:left; margin-right:40px; " class="buysubmit" href="apppayment.php">Tài khoản ứng dụng</a></div>
+                <div ><a style="background: #0c5a6c;float:left; margin-right:40px;margin-left:40px; " class="buysubmit" href="apppayment.php">Tài khoản ứng dụng</a></div>
             <form action="" method="POST">
                     <div><input style="background: #0c5a6c;float:left; margin-right:40px;" class="buysubmit" type ="submit" name="submit" value="Trả tại quầy" ></div>
             </form>
