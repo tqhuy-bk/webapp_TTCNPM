@@ -5,7 +5,7 @@
  ?>
 <?php 
    $product = new warehouseproduct();
-   
+
    if(!isset($_GET['productid']) || $_GET['productid'] ==NULL){
      echo  "<script> window.location='warelist.php' </script>";
    }
@@ -16,12 +16,12 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
       $check_update_product= $product->update_product($_POST, $id);
    }
-     
-   
+
+
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Chỉnh sửa hàng trong kho</h2>
+        <h2>Edit Product</h2>
         <span> <?php 
                    if(isset($check_update_product)==true){
                       echo $check_update_product; 
@@ -38,10 +38,10 @@
          <form action="" method="post" enctype="multipart/form-data">
         <!-- enctype để có thể thêm hình ảnh  -->
             <table class="form">
-               
+
                 <tr>
                     <td>
-                        <label>Tên</label>
+                        <label>Name</label>
                     </td>
                     <td>
                         <input type="text" name="productName" value="<?php echo $result_product['productName'] ?>" class="medium" />
@@ -49,7 +49,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Số lượng</label>
+                        <label>Amount</label>
                     </td>
                     <td>
                         <input type="text" name="amount" value="<?php echo $result_product['amount'] ?>" class="medium" />
@@ -59,7 +59,7 @@
         <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Cập nhật" />
+                        <input type="submit" name="submit" Value="Update" />
                     </td>
                 </tr>
             </table>
@@ -83,5 +83,3 @@
 </script>
 <!-- Load TinyMCE -->
 <?php include 'inc/footer.php';?>
-
-
