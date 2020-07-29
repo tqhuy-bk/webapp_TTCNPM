@@ -3,8 +3,12 @@
 <?php 
    include '../classes/product.php';
    include '../classes/category.php';
+   include '../classes/vendor.php';
    include_once '../helpers/format.php';
  ?>
+<?php 
+    $fm= new format();
+?>
 <?php
    $product= new product();
    if(isset($_GET['deleteid'])){ 
@@ -15,7 +19,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Danh sách mặt hàng</h2>
+        <h2>Product List</h2>
         <?php 
              if(isset($delete)==true){
                   	echo $delete;
@@ -25,35 +29,22 @@
             <table class="data display " id="example">
 			<thead>
 				<tr>
-					<th>Số thứ tự</th>
-					<th>Tên mặt hàng</th>
-					<th>Giá tiền</th>
-					<th>Hình ảnh</th>
-					<th>Mô tả</th>
-				  <th>Danh mục</th>
-				  <th>Nhà cung cấp</th>
-          <th>Loại</th>
-          <?php $level=Session::get('level');?>
-          <?php if($level==3){ ?>
-          <th>Thao tác</th>>
-           <?php
-              }
-              ?> 
-					
+					<th>Serial No.</th>
+					<th>Product Name</th>
+					<th>Price</th>
+					<th>Product Image</th>
+					<th>Description</th>
+				  <th>Category</th>
+				  <th>Vendor</th>
+          <th>Type</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
                 <?php 
-                    $level=Session::get('level');
-                    $vendorid=Session::get('vendorid');
                     $format= new Format();
                     $show = new product(); 
-                    if($level==1 or $level==2){
-                      $show_product= $show->show_product();
-                    }
-                    if($level==3 or $level==4){
-                      $show_product= $show->show_productvendor($vendorid);
-                    }
+                    $show_product= $show->show_product();
                     if($show_product){
                     	$i=0;
                     	while($result=$show_product->fetch_assoc()){
@@ -63,22 +54,17 @@
 				<tr class="odd gradeX">
 					<td><?php echo $i ?></td>
 					<td><?php echo $result['productName'] ?></td>
-					<td><?php echo $result['price'] ?></td>
+					<td><?php echo  $fm->format_money($result['price']) ?></td>
 					<?php  
 					    $text= $result['image']
 					 ?>
 					<td><img src="uploads/<?php echo $text ?>" height= 100px;></td>
 					<td><?php echo $format->textShorten($result['description'],30)?></td>
 					<td><?php echo $result['catName'] ?></td>
-					<td class="center"> <?php echo $result['catName'] ?></td>
+					<td class="center"> <?php echo $result['vendorName'] ?></td>
           <td class="center"> <?php echo $result['type'] ?></td>
-          <?php $level=Session::get('level');?>
-          <?php if($level==3){ ?>
-					<td><a href="product_edit.php?productid=<?php echo $result['productID'] ?>">Chỉnh sửa</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Xóa</a></td>
-				   <?php
-              }
-              ?> 
-        </tr>
+					<td><a href="product_edit.php?productid=<?php echo $result['productID'] ?>">Edit</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Delete</a></td>
+				</tr>
 				<?php 
 					 }
                     }
