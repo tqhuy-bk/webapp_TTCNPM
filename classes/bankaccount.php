@@ -35,7 +35,7 @@
             $amount = mysqli_real_escape_string($this->db->link, $data['amount']);
             
             if($cardcode=="" || $cardPass=="" || $amount==""){
-            	$alert= "<span class='error' >Xin điền đầy đủ thông tin</span>";
+            	$alert= "<span class='error' > Must be not empty</span>";
             	return $alert;
             }
             else{ 
@@ -45,19 +45,19 @@
 			             $x=$result->fetch_assoc();
 			             $balance=$x['cardBalance'];
 			             if($balance<$amount){
-				              $alert="<span class ='error'>Không đủ tiền</span>";
+				              $alert="<span class ='error'> Not enough money</span>";
                       return $alert;
 			             }
 			             else{
 				              $new = $balance-$amount;
                       $query = "UPDATE tbl_bankaccount SET cardBalance=$new WHERE cardcode = '$cardcode' AND cardPass = '$cardPass'";
                       $result = $this->db->update($query);
-				              $alert="<span  style='color:green;font-size:25px;'>Nạp tiền thành công</span>";
+				              $alert="<span  style='color:green;font-size:25px;'> Deposit successful</span>";
                       return $alert;
 			             }
                 }
                 else{
-                    $alert="<span class ='error'>Thông tin thẻ không đúng</span>";
+                    $alert="<span class ='error'> Card not correct</span>";
                     return $alert;
                 }
             }
