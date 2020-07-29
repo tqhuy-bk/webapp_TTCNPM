@@ -1,9 +1,7 @@
 <?php
   include 'inc/header.php';
  ?>
- <?php 
-   $show= $order->order_list();
- ?>
+
  <style>
  	.inner{
 	 	background-color: rgb(255, 255, 255);
@@ -64,7 +62,7 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>Danh sách đơn hàng</h2>
+			    	<h2>Đơn hàng</h2>
 			    	<div class="inner">
 						<table class="table">
 							<thead class="thread">
@@ -86,8 +84,8 @@
 									<td class="td"><a style="color:rgb(0, 127, 240);"href="orderdetail.php?date_order=<?php echo $result['date_order'] ?>"><?php echo $result['orderlistID'] ?></a></td>
 									<td class="td"><?php echo $result['date_order'] ?></td>
 									<td class="td"><?php echo $result['description']?> + ...</td>
-									<td class="td"><?php echo  $fm->format_money($result['price']) ?></td>
-									<td class="td"><?php  echo $result['state'] ?></td>
+									<td class="td"><?php echo  $fm->format_money($result['price']) ?>  vnđ</td>
+									<td class="td"><?php  echo $result['state'] ?> + <?php  echo $result['paystatus'] ?></td>
 								</tr>
 								<?php 
                                  }}
