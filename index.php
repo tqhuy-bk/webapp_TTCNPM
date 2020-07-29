@@ -30,7 +30,7 @@
 			</div>
 			<div class="content_bottom">
     		     <div class="heading">
-    		        <h3>Giảm giá</h3>
+    		        <h3>Khuyến mãi</h3>
     		     </div>
     		     <div class="clear"></div>
     	    </div>
@@ -46,7 +46,7 @@
 					 <p><?php echo $fm->textShorten($result['description'],30) ?></p>
 					 <p><span class="price"><?php echo $fm->format_money($result['price']) ?> vnđ</span></p>
 				     <div class="button" >
-				     	<span ><a href="details.php?productid=<?php echo $result['productID'] ?>" class="details">Details</a></span>
+				     	<span ><a href="details.php?productid=<?php echo $result['productID'] ?>" class="details">Xem thêm</a></span>
 				     </div>
 				</div>
 				<?php 
