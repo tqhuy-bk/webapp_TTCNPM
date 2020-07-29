@@ -1,4 +1,4 @@
-﻿<?php include 'inc/header.php';?>
+<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
 <?php 
    include '../classes/product.php';
@@ -8,6 +8,9 @@
    include '../classes/cart.php';
    include_once '../helpers/format.php';
  ?>
+<?php 
+    $fm= new format();
+?>
  <style>
  	.inner{
 	 	background-color: rgb(255, 255, 255);
@@ -66,31 +69,31 @@
  </style>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Đơn hàng mới</h2>
+                <h2>New Order</h2>
                 <div class="inner">
 						<table class="table">
 							<thead class="thread">
 								<tr class="tr">
-									<th class="th">ID đơn hàng</th>
-									<th class="th">Ngày đặt hàng</th>
-									<th class="th">Mặt hàng</th>
-									<th class="th">Thành tiền</th>
-									<th class="th">Trạng thái</th>
+									<th class="th">Order ID</th>
+									<th class="th">Date Order</th>
+									<th class="th">Products</th>
+									<th class="th">Total Price</th>
+									<th class="th">State</th>
 								</tr>
 							</thead>
 							<tbody class="tbody">
 								 <?php 
 								    $order= new order();
-							        $show_order= $order->show_order_list();
+							        $show_order= $order->show_order_list_admin();
 	                                if($show_order){
 	                    	            while($result=$show_order->fetch_assoc()){    
 						        ?>
 								<tr class="tr">
-									<td class="td"><a style="color:rgb(0, 127, 240);"href="orderDetails.php?date_order=<?php echo $result['date_order'] ?>"><?php echo $result['orderlistID'] ?></a></td>
+									<td class="td"><a style="color:rgb(0, 127, 240);"href="orderDetails.php?date_order=<?php echo $result['date_order'] ?>&customerid=<?php echo $result['customerID']?>"><?php echo $result['orderlistID'] ?></a></td>
 									<td class="td"><?php echo $result['date_order'] ?></td>
 									<td class="td"><?php echo $result['description']?> + ...</td>
-									<td class="td"><?php echo $result['price'] ?></td>
-									<td class="td"><?php  echo $result['state'] ?></td>
+									<td class="td"><?php echo $fm->format_money($result['price']) ?></td>
+									<td class="td"><?php  echo $result['state']?></td>
 								</tr>
 								<?php 
                                  }}
