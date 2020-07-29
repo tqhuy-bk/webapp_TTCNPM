@@ -12,7 +12,7 @@
  ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Thêm nhà cung cấp mới</h2>
+                <h2>Add New Vendor</h2>
                <span> <?php 
                    if(isset($check_insert_vendor)==true){
                       echo $check_insert_vendor; 
@@ -23,12 +23,12 @@
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name ="vendorName" placeholder="Nhập tên nhà cung cấp..." class="medium" />
+                                <input type="text" name ="vendorName" placeholder="Enter Vendor Name..." class="medium" />
                             </td>
                         </tr>
 						             <tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Thêm" />
+                                <input type="submit" name="submit" Value="Save" />
                             </td>
                         </tr>
                     </table>
