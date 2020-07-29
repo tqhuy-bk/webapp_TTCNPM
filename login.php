@@ -29,7 +29,7 @@
 			 ?></span>
         	<p>Hãy điền thông tin tài khoản vào bên dưới.</p>
         	<form action="" method="POST">
-                	<input name="customerName" type="text" class="field" placeholder="Tên tài khoản...">
+                <input name="customerName" type="text" class="field" placeholder="Tên tài khoản...">
                     <input name="password" type="password" class="field" placeholder="Mật khẩu...">
             
                     <p class="note"><a href="#">Quên mật khẩu?</a></p>
@@ -39,7 +39,6 @@
             <br>
             <br>
         </div>
-<!-- style="background:#6492d6;border: 1px solid #cecece;box-sizing: border-box;color: #444;display: block; font-size: 27px;height: 38px;text-align: center;" class="grey" -->
     	<div class="register_account">
     		<h3>Đăng kí tài khoản mới</h3>
     		<span><?php 
