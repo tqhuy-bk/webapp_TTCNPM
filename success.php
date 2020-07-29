@@ -1,15 +1,13 @@
 <?php 
 include 'inc/header.php' ?>
-
+<?php 
+   $show= $order->order_list();
+ ?>
 <div class="main">
-    
-	<div class="section group">
-
-	     <p style=" color:green; margin:30px 30% ;font-size:40px;">Thanh toán thành công</p>
-		<p> Đơn hàng của bạn: <a href="orderdetail.php">nhấn vào đây</a></p>
-          
-	</div>
-				
+     <div class="container" style="background:#dbdee0;width:100%;min-height:200px;">
+	   <p style=" color:green;font-size:40px;margin:20px 30%;padding-top:20px;">Đặt hàng thành công</p>
+	   <p style="margin-left: 30px;">Đơn hàng của bạn: <a href="orderdetail.php">Nhấn vào đây</a></p>
+	</div>			
     	<br>
     	<br>
     	<br>
