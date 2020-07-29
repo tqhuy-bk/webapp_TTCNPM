@@ -1,15 +1,10 @@
-
 <?php 
    $filepath= realpath(dirname(__FILE__)); 
    include_once ($filepath.'/../lib/database.php');
    include_once ($filepath.'/../helpers/format.php');
 
  ?>
-
  <?php 
-    /**
-     * 
-     */
     class category
     {
     	private $db;
@@ -28,18 +23,18 @@
             //lấy catName gán vào link trong class database
 
             if(empty($catName)){
-            	$alert= "<span class='error' >Xin điền đầy đủ thông tin</span>";
+            	$alert= "<span class='error' > Must be not empty</span>";
             	return $alert;
             }
             else{
             	$query ="INSERT INTO tbl_categori(catName) VALUES('$catName')"; 
             	$result = $this->db->insert($query);
                 if($result){
-                    $alert="<span class ='success'>Thêm danh mục thành công</span>";
+                    $alert="<span class ='success'> Add category completion</span>";
                     return $alert;
                 }
                 else{
-                    $alert="<span class ='error'>Thêm danh mục thất bại</span>";
+                    $alert="<span class ='error'> Add category not completion</span>";
                     return $alert;
                 }
             }
@@ -64,18 +59,18 @@
             $id = mysqli_real_escape_string($this->db->link, $id);
 
             if(empty($catName)){
-                $alert= "<span class='error' >Xin điền đầy đủ thông tin</span>";
+                $alert= "<span class='error' > Must be not empty</span>";
                 return $alert;
             }
             else{
                 $query ="UPDATE tbl_categori  SET catName ='$catName' WHERE catID = '$id'"; 
                 $result = $this->db->update($query);
                 if($result){
-                    $alert="<span class ='success'>Cập nhật danh mục thành công</span>";
+                    $alert="<span class ='success'> Update category completion</span>";
                     return $alert;
                 }
                 else{
-                    $alert="<span class ='error'>Cập nhật danh mục thất bại</span>";
+                    $alert="<span class ='error'> Update category not completion</span>";
                     return $alert;
                 }
             }
@@ -85,11 +80,11 @@
             //chọn phần tử trong bảng với đk catID= id 
             $result = $this->db->delete($query);
             if($result){
-                $alert= "<span class='success' >Xóa danh mục thành công</span>";
+                $alert= "<span class='success' > Delete completion</span>";
                 return $alert;
             }
             else{
-                $alert= "<span class='error' >Xóa danh mục thất bại</span>";
+                $alert= "<span class='error' > Dalete not completion</span>";
                 return $alert;
             }
         }
