@@ -219,21 +219,32 @@ button, input {
     border-radius: 4px;
 }
  </style>
+ <?php 
+     $get_info_customer=$customer->get_info();
+        if($get_info_customer){
+                 $result=$get_info_customer->fetch_assoc();
+        }
+?>
 <div class="main">
     <div class="content">
-    	<div class="container" style="background:#dbdee0;width:100%;margin:auto;min-height:500px;">
+        <div class="container" style="background:#dbdee0;width:100%;margin:auto;min-height:500px;">
             <aside class=" gKGcfW">
-                <div class="hBHoW"><img src="https://salt.tikicdn.com/desktop/img/avatar.png"><div class="info">Tài khoản của <strong>Tran Huy</strong></div></div>
+                <div class="hBHoW"><img src="https://salt.tikicdn.com/desktop/img/avatar.png"><div class="info">Tài khoản của<strong> <?php echo $result['customerName'] ?></strong></div></div>
                 <ul class="uSLJP">
                      <li>
                         <a class="is-active" href="profile.php">
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
-                            <span>Tài khoản</span></a>
+                            <span>Tài khoản của tôi</span></a>
+                    </li>
+                     <li>
+                        <a href="changePassword.php">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
+                            <span>Thay đổi mật khẩu</span></a>
                     </li>
                     <li>
                         <a class="" href="mynotice.php">
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"></path></svg>
-                            <span>Thông báo</span>
+                            <span>Thông báo của tôi</span>
                         </a>
                     </li>
                     <li>
@@ -271,9 +282,9 @@ button, input {
                             <label class="input-label">Email</label>
                             <input type="text" name="customerEmail" class="bYlDgr" value="<?php echo $result['customerEmail'] ?>">
                         </div>
-                        <div class="form-control">
-                            <label class="input-label">Giới tính</label>
-                            <label class="Radio__StyledRadio-sim90b-0 euTTxE"><input type="radio" name="gender" value="male" checked=""><span class="radio-fake"></span><span class="label">Nam</span></label><label class="euTTxE"><input type="radio" name="gender" value="female"><span class="radio-fake"></span><span class="label">Nữ</span></label>
+                         <div class="form-control">
+                            <label class="input-label">Số dư tài khoản ứng dụng</label>
+                            <input type="text" disabled="" name="customerEmail" class="bYlDgr" value="<?php echo $fm->format_money($result['balance']) ?> vnđ" > 
                         </div>
                         <div class="form-control">
                             <label class="input-label">&nbsp;</label>
