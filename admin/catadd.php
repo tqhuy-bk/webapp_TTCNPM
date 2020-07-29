@@ -1,4 +1,4 @@
-﻿<?php include 'inc/header.php';?>
+<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
 <?php 
    include '../classes/category.php'
@@ -12,7 +12,7 @@
  ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Thêm danh mục mới</h2>
+                <h2>Add New Category</h2>
                <span> <?php 
                    if(isset($check_insert_cat)==true){
                       echo $check_insert_cat; 
@@ -23,12 +23,12 @@
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name ="catName" placeholder="Nhập tên danh mục..." class="medium" />
+                                <input type="text" name ="catName" placeholder="Enter Category Name..." class="medium" />
                             </td>
                         </tr>
 						             <tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Thêm" />
+                                <input type="submit" name="submit" Value="Save" />
                             </td>
                         </tr>
                     </table>
