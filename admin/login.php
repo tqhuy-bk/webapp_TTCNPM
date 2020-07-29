@@ -8,7 +8,7 @@
       $adminPass = md5($_POST['adminPass']);
       $login_check = $class->login_admin($adminUser, $adminPass);
    }
- ?>
+ ?> 
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
@@ -30,7 +30,7 @@
 				<input type="text" placeholder="Tên đăng nhập" required="" name="adminUser"/>
 			</div>
 			<div>
-				<input type="password" placeholder="Mật khẩu" required="" name="adminPass"/>
+				<input type="password" placeholder="Mật khẩu..."  required="" name="adminPass"/>
 			</div>
 			<div>
 				<input type="submit" value="Đăng nhập" />
