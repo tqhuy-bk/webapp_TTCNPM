@@ -15,13 +15,11 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $catName = $_POST['catName'];
       $check_update_cat= $category->update_category($catName, $id);
-   }
-     
-   
+   } 
  ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Chỉnh sửa danh mục</h2>
+                <h2>Edit Category</h2>
                <span> <?php 
                    if(isset($check_update_cat)==true){
                       echo $check_update_cat; 
@@ -31,19 +29,18 @@
                    $get_cate_name= $category->getcatbyId($id);
                    if($get_cate_name){
                       while($result = $get_cate_name->fetch_assoc()){
-
                  ?>
                <div class="block copyblock"> 
                  <form action="" method ="post">
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name ="catName" value="<?php echo $result['catName'] ?>" placeholder="Chỉnh sửa tên danh mục..." class="medium" />
+                                <input type="text" name ="catName" value="<?php echo $result['catName'] ?>" placeholder="Edit Category Name..." class="medium" />
                             </td>
                         </tr>
 						             <tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Cập nhật" />
+                                <input type="submit" name="submit" Value="Update" />
                             </td>
                         </tr>
                     </table>
