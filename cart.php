@@ -53,7 +53,7 @@
 									<form action="" method="post">
 										<input type="hidden" name="cartID" value="<?php echo $result['cartID'] ?>"/>
 										<input type="number" name="quantity" min="1" value="<?php echo $result['quantity'] ?>"/>
-										<input type="submit" name="submit" value="Cập nhật"/>
+										<input type="submit" name="submit" value="cập nhập"/>
 									</form>
 								</td>
 								<?php 
@@ -72,8 +72,8 @@
 						<table style="float:right;text-align:left;" width="40%">
 							<br>
 							<tr>
-								<th style=" color:red;font-size:30px;">Tổng cộng: </th>
-								<td style=" color:red;font-size:20px;"><?php echo  $fm->format_money($sum_price)  ?> đồng</td>
+								<th style=" color:red;font-size:30px;">Tổng cộng : </th>
+								<td style=" color:red;font-size:20px;"><?php echo  $fm->format_money($sum_price)  ?> VND</td>
 							</tr>
 							
 					   </table>
@@ -82,15 +82,20 @@
 						<div class="shopleft">
 							<a href="index.php"> <img src="images/shop.png" alt="" /></a>
 						</div>
-						<div class="shopright">
-							<a href="<?php 
-                                         $check_login = Session::get('customer_login');
-		                             	 if($check_login==false){
-		   	 	                             echo 'login.php';
-		   	                             }
-		   	                             else echo 'payment.php';
-                                     ?>"> <img src="images/check.png" alt="" /></a>
+						
+						<div class='shopright'>
+							<a href='<?php 
+                                         	$check_login = Session::get('customer_login');
+			                             	if($check_login==false){
+			   	 	                             echo 'login.php';
+			   	                             }
+			   	                             else {echo 'payment.php';}
+			   	         
+		   	                            
+                                     ?>
+                                     '> <img src='images/check.png' /></a>
 						</div>
+						
 					</div>
     	</div>  	
        <div class="clear"></div>
