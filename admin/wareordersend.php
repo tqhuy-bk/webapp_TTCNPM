@@ -12,6 +12,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
+        <h2>Gửi đơn hàng mới</h2>
         <h2>Yêu cầu lấy hàng trong kho</h2>
         <?php  
         if(isset($check_insert_product)){
@@ -25,40 +26,40 @@
                
                 <tr>
                     <td>
-                        <label>Tên</label>
+                        <label>Name</label>
                     </td>
                     <td>
-                        <input type="text" name="productName" placeholder="Nhập tên hàng..." class="medium" />
+                        <input type="text" name="productName" placeholder="Enter Product Name..." class="medium" />
                     </td>
                 </tr>
-				        <tr>
+                        <tr>
                     <td>
-                        <label>Số lượng</label>
+                        <label>Amount</label>
                     </td>
                     <td>
-                        <input type="text" name="amount" placeholder="Nhập số lượng..." class="medium" />
+                        <input type="text" name="amount" placeholder="Enter Amount..." class="medium" />
                     </td>
                 </tr>
                  <tr>
                     <td>
-                        <label>ID của người quản lý kho cần lấy hàng</label>
+                        <label>ID của vendor quản lý kho cần lấy hàng</label>
                     </td>
                     <td>
-                        <input type="text" name="vendorid" placeholder="Nhập ID..." class="medium" />
+                        <input type="text" name="vendorid" placeholder="Enter ID..." class="medium" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>Mô tả</label>
+                        <label>Description</label>
                     </td>
                     <td>
                         <textarea name="description" ></textarea>
                     </td>
                 </tr>
-				        <tr>
+                        <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Gửi" />
+                        <input type="submit" name="submit" Value="Send" />
                     </td>
                 </tr>
             </table>
@@ -69,12 +70,12 @@
             <table class="data display " id="example">
             <thead>
                 <tr>
-                    <th>Số thứ tự</th>
-                    <th>Tên hàng</th>
-                    <th>Số lượng</th>
-          <th>Mô tả</th>
+                    <th>Serial No.</th>
+                    <th>Product Name</th>
+                    <th>Amount</th>
+          <th>Description</th>
           <th>Người yêu cầu</th>
-          <th>Trạng thái</th>
+          <th>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -88,7 +89,7 @@
                         $i=0;
                         while($result=$show_product->fetch_assoc()){
                             $i++;
-                    
+
                  ?>
                 <tr class="odd gradeX">
                     <td><center><?php echo $i ?></center></td>
@@ -119,5 +120,3 @@
 </script>
 <!-- Load TinyMCE -->
 <?php include 'inc/footer.php';?>
-
-
