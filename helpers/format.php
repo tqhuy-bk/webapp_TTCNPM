@@ -7,7 +7,7 @@ class Format{
     return date('F j, Y, g:i a', strtotime($date));
  }
 
- public function textShorten($text, $limit = 400){
+ public function textShorten($text, $limit = 400){//lấy ra một đoạn text ngắn từ đoạn dài
     $text = $text. " ";
     $text = substr($text, 0, $limit);
     $text = substr($text, 0, strrpos($text, ' '));
@@ -32,8 +32,8 @@ class Format{
      $title = 'contact';
     }
     return $title = ucfirst($title);
-   }
- public function format_money($n=0){// dùng để thêm dấu chấm vào trong hiển thị số tiền
+}
+  public function format_money($n=0){// dùng để thêm dấu chấm vào trong hiển thị số tiền
     $n=(string)$n;
     $n=strrev($n);
     $res='';
