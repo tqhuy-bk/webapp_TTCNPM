@@ -69,7 +69,7 @@ p {
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>Đơn hàng</h2>
+			    	<h2>Order</h2>
 			    	<div class="kHWfJY">
 			    		<?php 
 			    		   $show_info = $customer->get_info();
@@ -80,13 +80,13 @@ p {
 								<div class="content">
 									<p class="name"><?php echo $result_info['customerName'] ?></p>
 									<p class="address">
-									<span>Địa chỉ: </span>KTX  Khu B ĐHQGTPHCM, Bình Dương, Việt Nam</p>
+									<span>Email: </span> <?php echo $result_info['customerEmail'] ?></p>
 									<p class="phone"><span>Điện thoại: </span><?php echo  $result_info['customerPhone'] ?></p>
 								</div>
 							</div>
 							<div class="ipnhKS">
 								<div class="title">Hình thức giao hàng</div>
-								<div class="content"><p>Không</p><p></p></div>
+								<div class="content"><p>Nhận tại quầy</p><p></p></div>
 							</div>
 							<div class="ipnhKS">
 								<div class="title">Hình thức thanh toán</div>
@@ -95,13 +95,13 @@ p {
 					</div>
 					<table class="tblone">
 							<tr>
-								<th width="20%">Tên mặt hàng</th>
-								<th width="10%">Hình ảnh</th>
-								<th width="15%">Giá tiền</th>
-								<th width="20%">Số lượng</th>
-								<th width="20%">Thành tiền</th>
-								<th  width="20%">Ngày đặt hàng</th>
-								<th width="10%">Trạng thái</th>
+								<th width="20%">Product Name</th>
+								<th width="10%">Image</th>
+								<th width="15%">Price</th>
+								<th width="1%">Quantity</th>
+								<th width="15%">Total Price</th>
+								<th  width="18%">Date Order</th>
+								<th width="30%">State</th>
 							</tr>
 						    <?php 
 						        $show_order= $order->show_order_details($date_order);
@@ -112,16 +112,16 @@ p {
 							<tr>
 								<td><?php echo $result['productName'] ?></td>
 								<td><img style ="width:100px;height:70px;" src="admin/uploads/<?php echo $result['image'] ?>" alt=""/></td>
-								<td><?php echo  $fm->format_money($result['price']) ?></td>
+								<td><?php echo  $fm->format_money($result['price']) ?> vnđ</td>
 								<td> <?php echo $result['quantity'] ?></td>
 								<?php 
 								   $total_price = $result['quantity']*$result['price'];
 								   $sum_price += $total_price;
 								   Session::set('sum',$sum_price);
 								?>
-								<td><?php echo  $fm->format_money($total_price)?></td>
+								<td><?php echo  $fm->format_money($total_price)?> vnđ</td>
 								<td><?php echo $result['date_order'] ?></td>
-								<td><a href="">Đang thực hiện</a></td>
+								<td><a href=""><?php echo $result['state'] ?> + <?php echo $result['paystatus'] ?> </a></td>
 							</tr>
                              <?php 
                                 }
@@ -131,8 +131,8 @@ p {
 						<table style="float:right;text-align:left;" width="40%">
 							<br>
 							<tr>
-								<th style=" color:red;font-size:30px;">Tổng cộng: </th>
-								<td style=" color:red;font-size:20px;"><?php echo  $fm->format_money($sum_price)  ?> đồng</td>
+								<th style=" color:red;font-size:30px;">Total : </th>
+								<td style=" color:red;font-size:20px;"><?php echo  $fm->format_money($sum_price)  ?> VND</td>
 							</tr>
 							
 					   </table>
