@@ -9,12 +9,16 @@
    include '../classes/customer.php';
    include_once '../helpers/format.php';
  ?>
+<?php 
+    $fm= new format();
+?>
  <?php 
     if(!isset($_GET['date_order']) || $_GET['date_order'] ==NULL){
      echo  "<script> window.location='vieworder.php' </script>";
    }
    else{
     $date_order = $_GET['date_order'];
+    $customerID = $_GET['customerid'];
    }
  ?>
  <style>
@@ -75,21 +79,21 @@ p {
  </style>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Thông tin đơn hàng</h2>
+                <h2>Order detail</h2>
                 <div class="kHWfJY">
                   <?php 
                      $customer= new customer();
-                     $show_info = $customer->get_info();
+                     $show_info = $customer->get_info_customer_admin($customerID);
                      $result_info=$show_info->fetch_assoc();
                    ?>
                   <div class="ipnhKS">
-                    <div class="title">Thông tin khách hàng</div>
-                    <div class="content">
-                      <p class="name"><?php echo $result_info['customerName'] ?></p>
-                      <p class="address">
-                      <span>Địa chỉ: </span>KTX  Khu B ĐHQGTPHCM, Bình Dương, Việt Nam</p>
-                      <p class="phone"><span>Điện thoại: </span><?php echo  $result_info['customerPhone'] ?></p>
-                    </div>
+                          <div class="title">Thông tin khách hàng</div>
+                          <div class="content">
+                            <p class="name"><?php echo $result_info['customerName'] ?></p>
+                            <p class="address">
+                            <span>Email: </span> <?php echo $result_info['customerEmail'] ?></p>
+                            <p class="phone"><span>Điện thoại: </span><?php echo  $result_info['customerPhone'] ?></p>
+                          </div>
                   </div>
                   <div class="ipnhKS">
                     <div class="title">Hình thức giao hàng</div>
@@ -102,17 +106,17 @@ p {
               </div>
               <table class="tblone">
                   <tr>
-                    <th width="20%">Mặt hàng</th>
-                    <th width="10%">Hình ảnh</th>
-                    <th width="15%">Giá tiền</th>
-                    <th width="20%">Số lượng</th>
-                    <th width="20%">Thành tiền</th>
-                    <th  width="20%">Ngày đặt hàng</th>
-                    <th width="10%">Trạng thái</th>
+                    <th width="20%">Product Name</th>
+                    <th width="10%">Image</th>
+                    <th width="15%">Price</th>
+                    <th width="10%">Quantity</th>
+                    <th width="20%">Total Price</th>
+                    <th  width="20%">Date Order</th>
+                    <th width="20%">State</th>
                   </tr>
                     <?php 
                         $order= new order();
-                        $show_order= $order->show_order_details($date_order);
+                        $show_order= $order->show_order_details_admin($date_order);
                         $sum_price=0;
                                     if($show_order){
                                       while($result=$show_order->fetch_assoc()){    
@@ -120,16 +124,16 @@ p {
                   <tr>
                     <td><?php echo $result['productName'] ?></td>
                     <td><img style ="width:100px;height:70px;" src="uploads/<?php echo $result['image'] ?>" alt=""/></td>
-                    <td><?php echo $result['price'] ?></td>
+                    <td><?php echo $fm->format_money($result['price']) ?></td>
                     <td> <?php echo $result['quantity'] ?></td>
                     <?php 
                        $total_price = $result['quantity']*$result['price'];
                        $sum_price += $total_price;
                        Session::set('sum',$sum_price);
                     ?>
-                    <td><?php echo $total_price?></td>
+                    <td><?php echo $fm->format_money($total_price)?></td>
                     <td><?php echo $result['date_order'] ?></td>
-                    <td><a href="">Đang thực hiện</a></td>
+                    <td><a href=""><?php echo $result['state'] ?></a></td>
                   </tr>
                                  <?php 
                                     }
@@ -139,8 +143,11 @@ p {
                 <table style="float:right;text-align:left;" width="40%">
                   <br>
                   <tr>
-                    <th style=" color:red;font-size:20px;">Tổng cộng: </th>
-                    <td style=" color:red;font-size:20px;"><?php echo $sum_price  ?> đồng</td>
+                    <th style=" color:red;font-size:20px;">Total : </th>
+                    <td style=" color:red;font-size:20px;"><?php echo $fm->format_money($sum_price)  ?> VND</td>
+                  </tr>
+                  <tr>
+                    <?php if(Session::get('level')==4) echo '<a href="" style="padding:5px; border-radius:2px;border: 1px solid black; margin-left: 30%;color:red;font-size:20px;" >Thông báo Hoàn thành</a>'; ?>
                   </tr>
                   
              </table>
