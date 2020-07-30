@@ -40,7 +40,11 @@
 				<div class="add-cart">
 					<form action="" method="post">
 						<input type="number" class="buyfield" name="quantity" value="1" min="1" />
+<<<<<<< HEAD
 						<input style="background: #0c5a6c;" type="submit" class="buysubmit" name="submit" value="Thêm vào giỏ hàng"/>
+=======
+						<input style="background: #0c5a6c;" type="submit" class="buysubmit" name="submit" value="Buy Now"/>
+>>>>>>> c49b992b33ec8abcd70266ce4f96e853d6c6d545
 					</form>
 					<br>
 					<?php 
@@ -64,6 +68,7 @@
 					<h2>DANH MỤC</h2>
 					<ul>
 				         <li><a href="drinks.php">Cà phê</a></li>
+<<<<<<< HEAD
 				         <li><a href="foods.php">Hoa quả</a></li>
 				         <li><a href="drinks.php">Bánh ngọt</a></li>
 				         <li><a href="foods.php">Hamburger</a></li>
@@ -72,6 +77,18 @@
 				         <li><a  href="foods.php">coktail</a></li>
 				         <li><a  href="foods.php">Gà</a></li>
 				         <li><a  href="foods.php">Kẹo</a></li>
+=======
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+>>>>>>> c49b992b33ec8abcd70266ce4f96e853d6c6d545
     				</ul>
     	
  				</div>
@@ -81,4 +98,8 @@
 
  <?php
   include 'inc/footer.php';
+<<<<<<< HEAD
  ?>
+=======
+ ?>
+>>>>>>> c49b992b33ec8abcd70266ce4f96e853d6c6d545
