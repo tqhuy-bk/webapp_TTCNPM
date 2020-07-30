@@ -264,18 +264,9 @@ i {
                 <?php
                   if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                       $id=Session::get('customer_id');
-<<<<<<< HEAD
                         $add_order= $order->add_order_unpaid($id);
                         $remove = $cart->delete_cart();
                         echo  "<script> window.location='success.php' </script>";
-=======
-                      $compare=$customer->compare($sum_price,$id);
-                      if($compare==true){
-                        $add_order= $order->add_order_unpaid($id);
-                        $remove = $cart->delete_cart();
-                        echo  "<script> window.location='success.php' </script>";
-                      }
->>>>>>> c49b992b33ec8abcd70266ce4f96e853d6c6d545
                    }
                 ?>  
             <p style="margin-left:40px;" > Chọn phương thức thanh toán:</p>
@@ -288,8 +279,4 @@ i {
     </div>
 </div>
 <?php 
-<<<<<<< HEAD
 include 'inc/footer.php' ?>
-=======
-include 'inc/footer.php' ?>
->>>>>>> c49b992b33ec8abcd70266ce4f96e853d6c6d545

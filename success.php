@@ -19,8 +19,4 @@ include 'inc/header.php' ?>
 </div>
 <?php 
   include 'inc/footer.php';
-<<<<<<< HEAD
  ?>
-=======
- ?>
->>>>>>> c49b992b33ec8abcd70266ce4f96e853d6c6d545
