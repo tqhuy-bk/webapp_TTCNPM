@@ -75,23 +75,23 @@
 			      <?php 
 		   	           $check_login = Session::get('customer_login');
 		   	           if($check_login){
-		   	 	         echo '<a href="profile.php" class="login" style="margin-left:10px;background:#6492d6;width:170px;">My account</a>';
+		   	 	         echo '<a href="profile.php" class="login" style="margin-left:10px;background:#0c5a6c;width:200px;font-size:20px;border-radius: 8px;color:white;padding: 5px 5px;">Tài khoản của tôi</a>';
 		   	       }
 		   	       ?>
-			      <div><a href="admin/login.php" class="login" style="margin-left:10px;background:#6492d6;width:170px;">Login Admin</a> </div>
+			      <div><a href="admin/login.php" class="login" style="margin-left:10px;background:#0c5a6c;width:170px;border-radius: 8px; font-size:20px;color:white;font-weight: 200;padding: 5px 5px; ">Đăng nhập admin</a> </div>
 			      <?php 
 			          if(isset($_GET['customerid'])){ 
 			          	Session::destroy(); // nếu tồi tại customerid thì đăng xuất hủy phiên làm việc (khi đăng nhập) quay về lại ban đầu login.php
 			          }
 			       ?>
-		   <div class="login" style="background:#6492d6;">
+		   <div class="login" style="background:#0c5a6c; border-radius: 8px;font-size:20px;color:white;padding: 5px 5px;">
 		   	<?php 
 		   	  $check_login = Session::get('customer_login');
 		   	 if($check_login==false){
-		   	 	echo '<a href="login.php">Login</a>';
+		   	 	echo '<a style="color:white;"href="login.php">Đăng nhập</a>';
 		   	 }
 		   	 else{
-                 echo  '<a href="?customerid='.Session::get('customer_id').'">Logout</a>';//lấy customer_id gán vào customerid
+                 echo  '<a style="color:white;"href="?customerid='.Session::get('customer_id').'">Đăng xuất</a>';//lấy customer_id gán vào customerid
 		   	 }
 		   	 ?> 
 		   </div>

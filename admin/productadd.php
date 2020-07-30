@@ -15,7 +15,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Add New Product</h2>
+        <h2>Thêm mặt hàng mới</h2>
         <?php  
         if(isset($check_insert_product)){
             echo $check_insert_product;

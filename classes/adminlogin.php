@@ -83,7 +83,7 @@
             $adminOldpass = mysqli_real_escape_string($this->db->link, $data['oldpass']);
             $adminNewpass = mysqli_real_escape_string($this->db->link, $data['newpass']);
             if(empty($adminOldpass) || empty($adminNewpass) ){
-                $alert= "<span style='color:red;font-size:16px;'> Không được để trống</span>";
+                $alert= "<span style='color:red;font-size:16px;'>Không được để trống</span>";
                 return $alert;
             }
             /*if(md5($adminOldpass)!=$old){

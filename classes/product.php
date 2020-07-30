@@ -33,7 +33,7 @@
             
 
             if($productName=="" || $category=="" || $vendor=="" || $description=="" || $price=="" || $file_name=="" || $type==""){
-            	$alert= "<span class='error' > Must be not empty</span>";
+            	$alert= "<span class='error' >Không được để trống</span>";
             	return $alert;
             }
             else{
@@ -41,11 +41,11 @@
             	$query ="INSERT INTO tbl_product(productName,categoryID,vendorID,description,price,type,image) VALUES('$productName','$category','$vendor','$description','$price','$type','$file_name')"; 
             	$result = $this->db->insert($query);
                 if($result){
-                    $alert="<span class ='success'> Insert product completion</span>";
+                    $alert="<span class ='success'>Thêm mặt hàng thành công</span>";
                     return $alert;
                 }
                 else{
-                    $alert="<span class ='error'> Insert product not completion</span>";
+                    $alert="<span class ='error'>Thêm mặt hàng không thành công</span>";
                     return $alert;
                 }
             }
@@ -63,7 +63,7 @@
             
 
             if($file_name=="" || $title==""){
-                $alert= "<span class='error' > Must be not empty</span>";
+                $alert= "<span class='error' >Không được để trống</span>";
                 return $alert;
             }
             else{
@@ -71,11 +71,11 @@
                 $query ="INSERT INTO tbl_slider(title,image) VALUES('$title','$file_name')"; 
                 $result = $this->db->insert($query);
                 if($result){
-                    $alert="<span class ='success'> Insert slider completion</span>";
+                    $alert="<span class ='success'>Thêm slider thành công</span>";
                     return $alert;
                 }
                 else{
-                    $alert="<span class ='error'> Insert slider not completion</span>";
+                    $alert="<span class ='error'>Thêm slider không thành công</span>";
                     return $alert;
                 }
             }
@@ -105,7 +105,6 @@
         public function update_product($data,$files, $id){
            $productName = mysqli_real_escape_string($this->db->link, $data['productName']);
             $category = mysqli_real_escape_string($this->db->link, $data['category']);
-            $vendor = mysqli_real_escape_string($this->db->link, $data['vendor']);
             $description = mysqli_real_escape_string($this->db->link, $data['description']);
             $price = mysqli_real_escape_string($this->db->link, $data['price']);
             $type = mysqli_real_escape_string($this->db->link, $data['type']);
@@ -119,25 +118,25 @@
             $unique_image = substr(md5(time()), 0,10).'.'.$file_ext;
             
 
-            if(empty($productName) || empty($category) || empty($vendor) || empty($description) || empty($price)){
-                $alert= "<span class='error'> Must be not empty</span>";
+            if(empty($productName) || empty($category) || empty($description) || empty($price)){
+                $alert= "<span class='error'>Không được để trống</span>";
                 return $alert;
             }
             else{ 
                 if(!empty($file_name)){//chon anh
                     move_uploaded_file($_FILES['image']['tmp_name'], "uploads/$file_name");
-                     $query ="UPDATE tbl_product  SET productName ='$productName',categoryID='$category',vendorID='vendor',description='$description',price='$price',type='$type',image='$file_name' WHERE productID = '$id'";
+                     $query ="UPDATE tbl_product  SET productName ='$productName',categoryID='$category',description='$description',price='$price',type='$type',image='$file_name' WHERE productID = '$id'";
                 }
                 else{//khong chon anh
-                    $query ="UPDATE tbl_product  SET productName ='$productName',categoryID='$category',vendorID='vendor',description='$description',price='$price',type='$type' WHERE productID = '$id'";
+                    $query ="UPDATE tbl_product  SET productName ='$productName',categoryID='$category',description='$description',price='$price',type='$type' WHERE productID = '$id'";
                 }
                  $result = $this->db->update($query);
                     if($result){
-                        $alert="<span class ='success'> Update prouct completion</span>";
+                        $alert="<span class ='success'>Cập nhật mặt hàng thành công</span>";
                          return $alert;
                     }
                     else{
-                         $alert="<span class ='error'> Update product not completion</span>";
+                         $alert="<span class ='error'>Cập nhật mặt hàng không thành công</span>";
                           return $alert;
                     }
             }
@@ -148,11 +147,11 @@
             //chọn phần tử trong bảng với đk productID= id 
             $result = $this->db->delete($query);
             if($result){
-                $alert= "<span class='success' > Delete completion</span>";
+                $alert= "<span class='success' >Xóa thành công</span>";
                 return $alert;
             }
             else{
-                $alert= "<span class='error' > Dalete not completion</span>";
+                $alert= "<span class='error' >Xóa không thành công</span>";
                 return $alert;
             }
         }
@@ -161,11 +160,11 @@
             //chọn phần tử trong bảng với đk productID= id 
             $result = $this->db->delete($query);
             if($result){
-                $alert= "<span class='success' > Delete completion</span>";
+                $alert= "<span class='success' >Xóa thành công</span>";
                 return $alert;
             }
             else{
-                $alert= "<span class='error' > Dalete not completion</span>";
+                $alert= "<span class='error' >Xóa không thành công</span>";
                 return $alert;
             }
         }

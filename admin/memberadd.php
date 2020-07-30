@@ -176,7 +176,7 @@
                            
                             <div class="form-control">
                                 <label class="input-label">&nbsp;</label>
-                                <button type="submit" name= "submit" class="btn-submit">Update</button>
+                                <button type="submit" name= "submit" class="btn-submit">Cập nhật</button>
                             </div>
                             
                             <?php  

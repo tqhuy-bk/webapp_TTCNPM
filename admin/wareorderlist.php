@@ -12,11 +12,10 @@
    }
    
 if(isset($_GET['getname'])){ 
-    $id=$_GET['getid'];
+  $id=$_GET['getid'];
     $name= $_GET['getname'];
     $amo=$_GET['changeamount'];
-    $vendor=$_GET['vendorid'];
-    $delete= $product->change_status_product($id,$name,$amo,$vendor);
+    $delete= $product->insert($id,$name,$amo);
    }
 
  ?>

@@ -29,7 +29,7 @@
                         <label>Name</label>
                     </td>
                     <td>
-                        <input type="text" name="productName" placeholder="Enter Product Name..." class="medium" />
+                        <input type="text" name="productName" placeholder="Nhập tên mặt hàng..." class="medium" />
                     </td>
                 </tr>
                         <tr>
@@ -37,15 +37,7 @@
                         <label>Amount</label>
                     </td>
                     <td>
-                        <input type="text" name="amount" placeholder="Enter Amount..." class="medium" />
-                    </td>
-                </tr>
-                 <tr>
-                    <td>
-                        <label>ID của vendor quản lý kho cần lấy hàng</label>
-                    </td>
-                    <td>
-                        <input type="text" name="vendorid" placeholder="Enter ID..." class="medium" />
+                        <input type="text" name="amount" placeholder="Nhập số lượng..." class="medium" />
                     </td>
                 </tr>
                 <tr>

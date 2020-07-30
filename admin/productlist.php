@@ -19,7 +19,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Product List</h2>
+        <h2>Danh sách mặt hàng</h2>
         <?php 
              if(isset($delete)==true){
                   	echo $delete;
@@ -63,7 +63,7 @@
 					<td><?php echo $result['catName'] ?></td>
 					<td class="center"> <?php echo $result['vendorName'] ?></td>
           <td class="center"> <?php echo $result['type'] ?></td>
-					<td><a href="product_edit.php?productid=<?php echo $result['productID'] ?>">Edit</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Delete</a></td>
+					<td><a href="product_edit.php?productid=<?php echo $result['productID'] ?>">Sửa</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Xóa</a></td>
 				</tr>
 				<?php 
 					 }

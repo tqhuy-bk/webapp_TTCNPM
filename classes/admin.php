@@ -27,18 +27,18 @@
             $adminEmail = mysqli_real_escape_string($this->db->link, $data['adminEmail']);
             $adminUser = mysqli_real_escape_string($this->db->link, $data['adminUser']);           
             if(empty($adminName) || empty($adminEmail) || empty($adminUser)){
-                $alert= "<span style='color:red;font-size:16px;'> Must be not empty</span>";
+                $alert= "<span style='color:red;font-size:16px;'>Không được để trống</span>";
                 return $alert;
             }
             else{                 
                     $query ="UPDATE tbl_admin  SET adminName ='$adminName',adminEmail='$adminEmail',adminUser='$adminUser' WHERE adminID = '$id' ";
                     $result = $this->db->update($query);
                     if($result){
-                         $alert="<span style='color:green;font-size:16px;margin:2% 20%;'> Update completion</span>";
+                         $alert="<span style='color:green;font-size:16px;margin:2% 20%;'>Cập nhật thành công</span>";
                          return $alert;
                     }
                     else{
-                         $alert="<span style='color:red;font-size:16px;margin:2% 35%;'> Update not completion</span>";
+                         $alert="<span style='color:red;font-size:16px;margin:2% 35%;'>Cập nhật không thành công</span>";
                          return $alert;
                     }
             }
@@ -51,22 +51,21 @@
                 return $alert;
             }
             else{ 
-                    $query_check = "SELECT * FROM tbl_admin WHERE adminID = '$id' ";
-                    $result_check = $this->db->select($query_check);
-                    $result_check_final =$result_check->fetch_assoc();
-                    if($result_check_final['adminPass'] == $passwordOld){
-                        $query ="UPDATE tbl_customer  SET adminPass='$passwordNew' WHERE adminID = '$id' ";
-                        $result = $this->db->update($query);
-                        if($result){
-                              $alert= "<span style='color:red;font-size:16px;margin-left: 15%;'>Thay đổi mật khẩu thành công!</span>";
-                              return $alert;
-                        }
-                        else{
-                              $alert= "<span style='color:red;font-size:16px;margin-left: 15%;'> Thay đổi mật khẩu không thành công!</span>";
-                              return $alert;
-                        }
-
+                $query_check = "SELECT * FROM tbl_admin WHERE adminID= '$id' ";
+                $result_check = $this->db->select($query_check);
+                $result_check_final =$result_check->fetch_assoc();
+                if($result_check_final['adminPass'] == $passwordOld){
+                    $query ="UPDATE tbl_admin  SET adminPass='$passwordNew' WHERE adminID = '$id' ";
+                    $result = $this->db->update($query);
+                    if($result){
+                        $alert= "<span style='color:green;font-size:16px;margin-left: 15%;'>Thay đổi mật khẩu thành công!</span>";
+                        return $alert;
                     }
+                    else{
+                        $alert= "<span style='color:red;font-size:16px;margin-left: 15%;'>Thay đổi mật khẩu không thành công!</span>";
+                        return $alert;
+                    }
+                }
                     else{
                         $alert= "<span style='color:red;font-size:16px;margin-left: 15%;'>Thay đổi mật khẩu không thành công!</span>";
                         return $alert;
@@ -96,18 +95,18 @@
                 $vendorid=0;
             }
             if(empty($adminName) || empty($adminEmail) || empty($adminUser) || empty($adminPass)|| empty($role)|| empty($level)){
-                $alert= "<span class='error' style='color:red;font-size:23px;' > Không để trống các mục bắt buộc</span>";
+                $alert= "<span class='error' style='color:red;font-size:23px;' > Không được để trống</span>";
                 return $alert;
             }
             else{
                 $query ="INSERT INTO tbl_admin(adminName,adminEmail,adminUser,adminPass,role,vendorname,vendorid,level) VALUES('$adminName','$adminEmail','$adminUser','$adminPass','$role','$vendorname','$vendorid','$level')"; 
                 $result = $this->db->insert($query);
                 if($result){
-                    $alert="<span class ='success' style='color:green;font-size:23px;'>Create account completion</span>";
+                    $alert="<span class ='success' style='color:green;font-size:23px;'>Tạo tài khoản thành công</span>";
                     return $alert;
                 }
                 else{
-                    $alert="<span style='color:red;font-size:23px;' class ='error'> Create account not completion</span>";
+                    $alert="<span style='color:red;font-size:23px;' class ='error'>Tạo tài khoản không thành công</span>";
                     return $alert;
                 }
             }
