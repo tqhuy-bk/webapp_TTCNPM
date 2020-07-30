@@ -11,7 +11,8 @@
  ?>
  <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
-      $check_add_product_cart= $cart->add_product_cart($_POST,$id);
+        $quantity= $_POST['quantity'];
+        $check_add_product_cart = $cart->add_product_cart($quantity,$id);
       //vi co chen ảnh nên có $_FILES
    } 
  ?>
@@ -32,19 +33,25 @@
 					<h2><?php echo $result['productName'] ?></h2>
 					<p><?php echo  $result['description'] ?></p>					
 					<div class="price">
-						<p>Price: <span><?php echo $result['price'] ?>VND</span></p>
-						<p>Category: <span><?php echo $result['catName'] ?> </span></p>
-						<p>Vendor: <span><?php echo $result['catName'] ?> </span> </p>
+						<p>Giá tiền: <span><?php echo  $fm->format_money($result['price']) ?> vnđ</span></p>
+						<p>Loại: <span><?php echo $result['catName'] ?> </span></p>
+						<p>Cung cấp bởi:<span><?php echo $result['vendorName'] ?> </span> </p>
 					</div>
 				<div class="add-cart">
 					<form action="" method="post">
-						<input type="number" class="buyfield" name="quantity" value="1"/>
-						<input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
-					</form>				
+						<input type="number" class="buyfield" name="quantity" value="1" min="1" />
+						<input style="background: #0c5a6c;" type="submit" class="buysubmit" name="submit" value="Thêm vào giỏ hàng"/>
+					</form>
+					<br>
+					<?php 
+					   if(isset($check_add_product_cart)){
+					   	echo $check_add_product_cart;
+					   }
+					 ?>				
 				</div>
 			</div>
 			<div class="product-desc">
-			<h2>Product Details</h2>
+			<h2 style="background: #0c5a6c;">Chi tiết sản phẩm</h2>
 			<p><?php echo $result['description'] ?></p>
 	        </div>
 				
@@ -54,19 +61,17 @@
 	       } 
 	     ?>
 				<div class="rightsidebar span_3_of_1">
-					<h2>CATEGORIES</h2>
+					<h2>DANH MỤC</h2>
 					<ul>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
-				         <li><a href="drinks.php">Coffee</a></li>
+				         <li><a href="drinks.php">Cà phê</a></li>
+				         <li><a href="foods.php">Hoa quả</a></li>
+				         <li><a href="drinks.php">Bánh ngọt</a></li>
+				         <li><a href="foods.php">Hamburger</a></li>
+				         <li><a href="drinks.php">Mì gói</a></li>
+				         <li><a  href="foods.php">Trà sữa</a></li>
+				         <li><a  href="foods.php">coktail</a></li>
+				         <li><a  href="foods.php">Gà</a></li>
+				         <li><a  href="foods.php">Kẹo</a></li>
     				</ul>
     	
  				</div>

@@ -2,7 +2,7 @@
 <?php  include 'inc/sidebar.php';?>
 <?php 
    include '../classes/category.php';
-  // include 'vendor'
+  include '../classes/vendor.php';
  ?>
 <?php 
      include '../classes/product.php';
@@ -11,7 +11,6 @@
    $pr = new product();  
    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
       $check_insert_product= $pr->insert_product($_POST,$_FILES);
-      //vi co chen ảnh nên có $_FILES
    }
  ?>
 <div class="grid_10">
@@ -24,7 +23,6 @@
          ?>
         <div class="block">               
          <form action="productadd.php" method="post" enctype="multipart/form-data">
-        <!-- enctype để có thể thêm hình ảnh  -->
             <table class="form">
                
                 <tr>
@@ -43,8 +41,8 @@
                         <select id="select" name="category">
                             
                             <?php 
-                               $cat= new category();
-                            $catlist= $cat->show_category();
+                               $category= new category();
+                            $catlist= $category->show_category();
                             if($catlist){
                                 while($result= $catlist->fetch_assoc()){
                              ?>
@@ -63,12 +61,12 @@
                     <td>
                         <select id="select" name="vendor">
                           <?php 
-                               $cat= new category();
-                            $catlist= $cat->show_category();
-                            if($catlist){
-                                while($result= $catlist->fetch_assoc()){
+                               $vendor= new vendor();
+                            $vendorlist= $vendor->show_vendor();
+                            if($vendorlist){
+                                while($result= $vendorlist->fetch_assoc()){
                              ?>
-                            <option value="<?php echo $result['catID'] ?>"><?php echo $result['catName'] ?></option>
+                            <option value="<?php echo $result['vendorID'] ?>"><?php echo $result['vendorName'] ?></option>
                             <?php 
                               }
                              }
@@ -76,7 +74,6 @@
                         </select>
                     </td>
                 </tr>
-				
 				        <tr>
                     <td style="vertical-align: top; padding-top: 9px;">
                         <label>Description</label>

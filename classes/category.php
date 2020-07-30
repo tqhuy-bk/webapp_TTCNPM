@@ -1,15 +1,10 @@
-
 <?php 
    $filepath= realpath(dirname(__FILE__)); 
    include_once ($filepath.'/../lib/database.php');
    include_once ($filepath.'/../helpers/format.php');
 
  ?>
-
  <?php 
-    /**
-     * 
-     */
     class category
     {
     	private $db;
@@ -28,7 +23,7 @@
             //lấy catName gán vào link trong class database
 
             if(empty($catName)){
-            	$alert= "<span class='error' > category must be not empty</span>";
+            	$alert= "<span class='error' > Must be not empty</span>";
             	return $alert;
             }
             else{
@@ -64,7 +59,7 @@
             $id = mysqli_real_escape_string($this->db->link, $id);
 
             if(empty($catName)){
-                $alert= "<span class='error' > category must be not empty</span>";
+                $alert= "<span class='error' > Must be not empty</span>";
                 return $alert;
             }
             else{

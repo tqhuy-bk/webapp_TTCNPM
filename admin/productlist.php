@@ -3,8 +3,12 @@
 <?php 
    include '../classes/product.php';
    include '../classes/category.php';
+   include '../classes/vendor.php';
    include_once '../helpers/format.php';
  ?>
+<?php 
+    $fm= new format();
+?>
 <?php
    $product= new product();
    if(isset($_GET['deleteid'])){ 
@@ -15,7 +19,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Post List</h2>
+        <h2>Product List</h2>
         <?php 
              if(isset($delete)==true){
                   	echo $delete;
@@ -50,14 +54,14 @@
 				<tr class="odd gradeX">
 					<td><?php echo $i ?></td>
 					<td><?php echo $result['productName'] ?></td>
-					<td><?php echo $result['price'] ?></td>
+					<td><?php echo  $fm->format_money($result['price']) ?></td>
 					<?php  
 					    $text= $result['image']
 					 ?>
 					<td><img src="uploads/<?php echo $text ?>" height= 100px;></td>
 					<td><?php echo $format->textShorten($result['description'],30)?></td>
 					<td><?php echo $result['catName'] ?></td>
-					<td class="center"> <?php echo $result['catName'] ?></td>
+					<td class="center"> <?php echo $result['vendorName'] ?></td>
           <td class="center"> <?php echo $result['type'] ?></td>
 					<td><a href="product_edit.php?productid=<?php echo $result['productID'] ?>">Edit</a> || <a href="?deleteid=<?php echo $result['productID'] ?>">Delete</a></td>
 				</tr>

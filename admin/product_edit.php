@@ -2,7 +2,6 @@
 <?php  include 'inc/sidebar.php';?>
 <?php 
    include '../classes/category.php';
-  // include 'vendor'
  ?>
 <?php 
      include '../classes/product.php';
@@ -10,16 +9,16 @@
 <?php 
    $product = new product();
    
-   if(!isset($_GET['productid']) || $_GET['productid'] ==NULL){
+   if(!isset($_GET['productid']) || $_GET['productid'] == NULL){
      echo  "<script> window.location='productlist.php' </script>";
    }
    else{
     $id = $_GET['productid'];
    }
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
       $check_update_product= $product->update_product($_POST,$_FILES, $id);
-   }
+  }
      
    
  ?>

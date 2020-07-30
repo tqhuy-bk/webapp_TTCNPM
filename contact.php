@@ -6,9 +6,8 @@
     <div class="content">
     	<div class="support">
   			<div class="support_desc">
-  				<h3>Live Support</h3>
-  				<p><span>24 hours | 7 days a week | 365 days a year &nbsp;&nbsp; Live Technical Support</span></p>
-  				<p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+  				<h3>Hỗ trợ trực tuyến</h3>
+  				<p><span>24 giờ | 7 ngày trong tuần | 365 ngày trong năm &nbsp;&nbsp; Hỗ trợ trực tuyến</span></p>
   			</div>
   				<img src="web/images/contact.png" alt="" />
   			<div class="clear"></div>
@@ -16,10 +15,10 @@
     	<div class="section group">
 				<div class="col span_2_of_3">
 				  <div class="contact-form">
-				  	<h2>Contact Us</h2>
+				  	<h2>Liên hệ với chúng tôi</h2>
 					    <form>
 					    	<div>
-						    	<span><label>NAME</label></span>
+						    	<span><label>TÊN</label></span>
 						    	<span><input type="text" value=""></span>
 						    </div>
 						    <div>
@@ -27,29 +26,29 @@
 						    	<span><input type="text" value=""></span>
 						    </div>
 						    <div>
-						     	<span><label>MOBILE.NO</label></span>
+						     	<span><label>SỐ ĐIỆN THOẠI</label></span>
 						    	<span><input type="text" value=""></span>
 						    </div>
 						    <div>
-						    	<span><label>SUBJECT</label></span>
+						    	<span><label>YÊU CẦU</label></span>
 						    	<span><textarea> </textarea></span>
 						    </div>
 						   <div>
-						   		<span><input type="submit" value="SUBMIT"></span>
+						   		<span><input type="submit" value="GỬI"></span>
 						  </div>
 					    </form>
 				  </div>
   				</div>
 				<div class="col span_1_of_3">
       			<div class="company_address">
-				     	<h2>Company Information :</h2>
-						    	<p>500 Lorem Ipsum Dolor Sit,</p>
-						   		<p>22-56-2-9 Sit Amet, Lorem,</p>
-						   		<p>USA</p>
-				   		<p>Phone:(00) 222 666 444</p>
+				     	<h2>Thông tin:</h2>
+						    	<p>Khu ăn uống Đại học Bách Khoa,</p>
+						   		<p>268 Lý Thường Kiệt, phường 14, quận 10,</p>
+						   		<p>Thành phố Hồ Chí Minh, Việt Nam</p>
+				   		<p>Điện thoại:(00) 222 666 444</p>
 				   		<p>Fax: (000) 000 00 00 0</p>
 				 	 	<p>Email: <span>info@mycompany.com</span></p>
-				   		<p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
+				   		<p>Theo dõi chúng tôi tại: <span>Facebook</span>, <span>Twitter</span></p>
 				   </div>
 				 </div>
 			  </div>    	

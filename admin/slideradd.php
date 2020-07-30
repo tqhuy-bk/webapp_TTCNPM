@@ -1,23 +1,41 @@
-<?php include 'inc/header.php';?>
-<?php include 'inc/sidebar.php';?>
+<?php  include 'inc/header.php';?>
+<?php  include 'inc/sidebar.php';?>
+<?php 
+   include '../classes/category.php';
+  include '../classes/vendor.php';
+ ?>
+<?php 
+     include '../classes/product.php';
+ ?>
+<?php 
+   $pr = new product();  
+   if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+      $check_insert_slider= $pr->insert_slider($_POST,$_FILES);
+   }
+ ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Add New Slider</h2>
+        <h2>Thêm slider mới</h2>
+         <?php  
+                if(isset($check_insert_slider)){
+                    echo $check_insert_slider;
+                }
+         ?>
     <div class="block">               
-         <form action="addslider.php" method="post" enctype="multipart/form-data">
+         <form action="slideradd.php" method="post" enctype="multipart/form-data">
             <table class="form">     
                 <tr>
                     <td>
-                        <label>Title</label>
+                        <label>Chủ đề</label>
                     </td>
                     <td>
-                        <input type="text" name="title" placeholder="Enter Slider Title..." class="medium" />
+                        <input type="text" name="title" placeholder="Thêm chủ đề slider..." class="medium" />
                     </td>
                 </tr>           
     
                 <tr>
                     <td>
-                        <label>Upload Image</label>
+                        <label>Thêm hình ảnh</label>
                     </td>
                     <td>
                         <input type="file" name="image"/>
@@ -27,7 +45,7 @@
 				<tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Save" />
+                        <input type="submit" name="submit" Value="Lưu" />
                     </td>
                 </tr>
             </table>

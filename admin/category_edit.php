@@ -15,9 +15,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $catName = $_POST['catName'];
       $check_update_cat= $category->update_category($catName, $id);
-   }
-     
-   
+   } 
  ?>
         <div class="grid_10">
             <div class="box round first grid">
@@ -31,7 +29,6 @@
                    $get_cate_name= $category->getcatbyId($id);
                    if($get_cate_name){
                       while($result = $get_cate_name->fetch_assoc()){
-
                  ?>
                <div class="block copyblock"> 
                  <form action="" method ="post">
